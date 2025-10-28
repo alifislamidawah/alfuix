@@ -63,3 +63,6 @@ ALUIX/
 ├── README.md
 ├── .npmignore
 └── package.json
+
+; Install dependency for compiling and minifing css and js
+; npm install sass terser concat-cli copyfiles mkdirp rimraf --save-dev

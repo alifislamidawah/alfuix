@@ -1,10 +1,10 @@
 {
   "name": "aluix",
   "version": "1.0.0",
-  "description": "ALUIX — A futuristic, modular SCSS + JS UI framework that extends Bootstrap with advanced utilities, animations, and clipping effects for next-generation web design.",
+  "description": "aLuix — A futuristic, modular SCSS + JS UI framework that extends Bootstrap with advanced utilities, animations, and clipping effects for next-generation web design.",
   "keywords": [
     "aluix",
-    "aluix",
+    "al-uix",
     "bootstrap",
     "bootstrap-extended",
     "ui-framework",
@@ -25,23 +25,23 @@
     "futuristic-ui",
     "custom-utilities"
   ],
-  "homepage": "https://github.com/yourusername/ALUIX#readme",
+  "homepage": "https://github.com/yourusername/AL-UIX/",
   "bugs": {
-    "url": "https://github.com/yourusername/ALUIX/issues"
+    "url": "https://github.com/yourusername/AL-UIX/issues"
   },
   "license": "MIT",
-  "author": "Alif Design Studio",
+  "author": "Alif Design Studio & aLuix",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/ALUIX.git"
+    "url": "git+https://github.com/yourusername/AL-UIX.git"
   },
   "main": "dist/js/aluix.js",
-  "style": "dist/aluix.css",
+  "style": "dist/css/aluix.css",
   "sass": "scss/aluix.scss",
   "exports": {
     ".": {
       "sass": "./scss/aluix.scss",
-      "style": "./dist/aluix.css",
+      "style": "./dist/css/aluix.css",
       "require": "./dist/js/aluix.js",
       "default": "./dist/js/aluix.js"
     },
@@ -61,8 +61,7 @@
     "dev": "npx sass --watch scss:dist/css",
 
     "build": "npm run clean && npm run build:all",
-
-    "build:all": "npx mkdirp dist/css dist/js && npm run css:build && npm run js:build",
+    "build:all": "npx mkdirp dist/css dist/js && npm run css:build && npm run js:build && npm run add:banners",
 
     "css:build": "npm run css:normal && npm run css:minify",
     "css:normal": "npx sass scss/aluix.scss dist/css/aluix.css --style=expanded && npx sass scss/aluix-clip.scss dist/css/aluix-clip.css --style=expanded && npx sass scss/aluix-animation.scss dist/css/aluix-animation.css --style=expanded && npx sass scss/aluix-utilities.scss dist/css/aluix-utilities.css --style=expanded",
@@ -71,7 +70,9 @@
     "js:build": "npm run js:copy && npm run js:bundle && npm run js:minify",
     "js:copy": "npx mkdirp dist/js && npx copyfiles -f js/aluix.js js/aluix-animation.js dist/js",
     "js:bundle": "npx concat-cli -f js/aluix.js js/aluix-animation.js -o dist/js/aluix.bundle.js",
-    "js:minify": "npx terser dist/js/aluix.js -o dist/js/aluix.min.js --compress --mangle && npx terser dist/js/aluix-animation.js -o dist/js/aluix-animation.min.js --compress --mangle && npx terser dist/js/aluix.bundle.js -o dist/js/aluix.bundle.min.js --compress --mangle",
+    "js:minify": "npx terser dist/js/aluix.js -o dist/js/aluix.min.js --compress --mangle --comments '/^!/' && npx terser dist/js/aluix-animation.js -o dist/js/aluix-animation.min.js --compress --mangle --comments '/^!/' && npx terser dist/js/aluix.bundle.js -o dist/js/aluix.bundle.min.js --compress --mangle --comments '/^!/'",
+
+    "add:banners": "node build-banner.js",
 
     "clean": "npx rimraf dist",
     "test": "echo \"No tests specified\" && exit 0"
@@ -87,6 +88,7 @@
   "devDependencies": {
     "concat-cli": "^4.0.0",
     "copyfiles": "^2.4.1",
+    "mkdirp": "^3.0.1",
     "rimraf": "^6.0.1",
     "sass": "^1.93.2",
     "terser": "^5.44.0"

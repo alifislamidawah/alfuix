@@ -1,18 +1,19 @@
-# 🤝 Contributing to ALUIX
+# 🤝 Contributing to aLuix
 
 First off — thank you for taking the time to contribute! 💙  
-Your help is what makes **ALUIX** a better framework for everyone.
+Your help is what makes **aLuix** a better and more futuristic framework for everyone.
 
 ---
 
 ## 🧩 Overview
 
-**ALUIX** is a futuristic, modular SCSS + JS UI framework that **extends Bootstrap** with advanced utilities, animations, and clipping effects.
+**aLuix** is a futuristic, modular **SCSS + JS UI framework** that extends **popular systems like Bootstrap and Tailwind** with advanced utilities, motion effects, and clipping-based design.
 
 The framework follows:
-- **Bootstrap's coding philosophy** — structured, maintainable, and modular.
-- **Semantic versioning (SemVer)** — for predictable releases.
-- **Open collaboration** — all contributions welcome!
+
+- 🧱 **Bootstrap & Tailwind principles** — structured, scalable, and utility-driven.  
+- 🧮 **Semantic Versioning (SemVer)** — predictable and stable releases.  
+- 💬 **Open collaboration** — every contribution, big or small, is welcome!  
 
 ---
 
@@ -23,3 +24,9 @@ The framework follows:
 git clone https://github.com/yourusername/aluix.git
 cd aluix
 npm install
+
+### 2️⃣ Run Dev Build
+npm run dev
+
+### 3️⃣ Build Production Files
+npm run build

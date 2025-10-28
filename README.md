@@ -1,19 +1,20 @@
-# 🌌 ALUIX — Extending Bootstrap for the Future
+# 🌌 aLuix — Extending popular frameworks like Bootstrap & Tailwind for the Future
 
-> **ALUIX** is a futuristic SCSS + JS UI framework that **extends Bootstrap** with advanced animations, clipping effects, and high-performance utility layers.  
-> Designed for developers and designers who love Bootstrap’s reliability but want next-gen motion, interactivity, and visual depth.
+> **aLuix** is a futuristic, modular **SCSS + JS UI framework** that extends popular systems like **Bootstrap** and **Tailwind** with advanced utilities, motion layers, and clipping effects for next-generation web design.  
+> Built for developers and designers who want the reliability of Bootstrap and the flexibility of Tailwind — supercharged with **motion, depth, and futuristic design power.**
 
 ---
 
-## 🚀 Why ALUIX?
+## 🚀 Why aLuix?
 
 | Feature | Description |
 |----------|-------------|
-| ⚙️ **Extends Bootstrap** | Works seamlessly with Bootstrap 5.3+ — inherits its grid, variables, and utilities. |
-| ✨ **Futuristic Utilities** | Adds advanced features like clip-paths, filters, motion, and interactivity layers. |
+| ⚙️ **Extends Bootstrap & Tailwind** | Works seamlessly with **Bootstrap 5.3+** and **Tailwind CSS** — inherits grids, variables, and utilities. |
+| ✨ **Futuristic Utilities** | Adds advanced features like **clip-paths**, **filters**, **blend modes**, and **interactive layers**. |
 | 🎨 **Modular Architecture** | Import only what you need — full framework or standalone utilities. |
-| 💫 **Smooth Animations** | Includes scroll, reveal, and motion-driven effects for immersive UIs. |
-| 🧩 **Plugin-Ready** | Compatible with `particles.js`, `fslightbox`, and `slick-carousel`. |
+| 💫 **High-Performance Animations** | Includes **scroll**, **reveal**, and **motion-based** effects for immersive UI. |
+| 🧩 **Plugin-Ready** | Compatible with popular JS libraries like `particles.js`, `fslightbox`, and `slick-carousel`. |
+| 🧠 **Designer Friendly** | SCSS-driven system with variables, mixins, and design tokens for easy customization. |
 
 ---
 
@@ -21,6 +22,8 @@
 
 ```bash
 npm install bootstrap aluix
+npm install tailwindcss aluix
 
 # OR via yarn
-yarn add aluix
+yarn add bootstrap aluix
+yarn add tailwindcss aluix

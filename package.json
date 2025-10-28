@@ -1,12 +1,14 @@
 {
   "name": "aluix",
   "version": "1.0.0",
-  "description": "aLuix — A futuristic, modular SCSS + JS UI framework that extends Bootstrap with advanced utilities, animations, and clipping effects for next-generation web design.",
+  "description": "aLuix — A futuristic, modular SCSS + JS UI framework that extends popular frameworks like Bootstrap and Tailwind with advanced utilities, motion effects, and clipping-based design for next-generation web experiences.",
   "keywords": [
     "aluix",
     "al-uix",
     "bootstrap",
-    "bootstrap-extended",
+    "bootstrap-extension",
+    "tailwind",
+    "tailwind-extension",
     "ui-framework",
     "frontend-framework",
     "scss",
@@ -15,15 +17,17 @@
     "javascript",
     "utilities",
     "animations",
+    "motion-ui",
     "clip-path",
     "design-system",
     "modern-ui",
     "responsive-design",
     "web-components",
-    "motion-ui",
     "visual-effects",
     "futuristic-ui",
-    "custom-utilities"
+    "custom-utilities",
+    "advanced-ui",
+    "modern-framework"
   ],
   "homepage": "https://github.com/yourusername/AL-UIX/",
   "bugs": {

@@ -1,6 +1,6 @@
 # 🧾 Changelog
 
-All notable changes to **ALUIX** will be documented in this file.  
+All notable changes to **aLuix** will be documented in this file.  
 This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH).
 
 ---
@@ -9,53 +9,54 @@ This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PAT
 
 ### 🎉 Initial Release
 
-- Introduced **ALUIX**, a futuristic, modular SCSS + JS UI framework that **extends Bootstrap**.  
+- Introduced **aLuix**, a futuristic, modular **SCSS + JS UI framework** that extends **Bootstrap and Tailwind**.  
 - Core features:
-  - **Bootstrap-compatible architecture** — built to work seamlessly with Bootstrap 5.3+.
-  - **Advanced SCSS utilities** — including sizing, clip, transform, typography, and filters.
-  - **Futuristic animations** — scroll, reveal, and motion utilities.
-  - **Standalone builds** — `aluix-clip`, `aluix-animation`, and `aluix-utilities`.
-  - **JavaScript extensions** — for motion and interactivity.
-  - **Optional plugin support** — for `particles.js`, `fslightbox`, and `slick-carousel`.
+  - **Framework-agnostic architecture** — designed to work seamlessly with **Bootstrap 5.3+** and **Tailwind CSS**.
+  - **Advanced SCSS utilities** — including sizing, clip, transform, filters, and typography helpers.
+  - **Futuristic animations** — motion, scroll, reveal, and transform effects.
+  - **Standalone builds** — `aluix-clip`, `aluix-animation`, and `aluix-utilities` modules.
+  - **JavaScript extensions** — for interactive motion and visual layering.
+  - **Plugin-ready design** — supports third-party integrations like `particles.js`, `fslightbox`, and `slick-carousel`.
 - Production-ready structure:
-  - `/scss` — full source files (components, utilities, sections)
-  - `/js` — animation and helper scripts
+  - `/scss` — source files (core, components, utilities, effects)
+  - `/js` — animation and motion scripts
   - `/dist` — compiled, minified builds
-- MIT licensed under [Alif Design Studio](https://github.com/yourusername/aluix).
+- Licensed under **MIT** — by [The Alif Design Studio & aLuix Authors](https://github.com/yourusername/aluix).
 
 ---
 
 ## [Unreleased]
 
 ### ✨ Added
-- New futuristic utilities (planned: `_3d.scss`, `_neon.scss`, `_parallax.scss`).
+- Planned new futuristic utilities: `_3d.scss`, `_neon.scss`, `_parallax.scss`.
+- `data-motion` attribute support for declarative animations.
 
 ### 🔧 Changed
-- Improved variable system for advanced theming support.
-- Optimized animation easing and reduced CSS size.
+- Enhanced variable system for **advanced theming** and **dark mode**.
+- Optimized motion easing curves and reduced compiled CSS footprint.
 
 ### 🐞 Fixed
-- Minor SCSS variable reference inconsistencies.
+- Corrected SCSS variable reference inconsistencies.
 - Fixed z-index layering issue on modals and tooltips.
+- Adjusted clip-path utility naming for better readability.
 
 ### 🗑️ Removed
-- Deprecated experimental `_legacy.scss` utilities.
+- Deprecated experimental `_legacy.scss` utilities and old mixin references.
 
 ---
 
 ## 📦 Versioning Guidelines
 
-- **MAJOR** → breaking changes to structure, variables, or architecture  
-  _(e.g., 1.x.x → 2.0.0)_  
-- **MINOR** → new features or utilities, backward-compatible  
-  _(e.g., 1.0.0 → 1.1.0)_  
-- **PATCH** → fixes or minor improvements  
-  _(e.g., 1.0.0 → 1.0.1)_  
+| Type | Description | Example |
+|------|--------------|----------|
+| **MAJOR** | Breaking changes (structure, variables, or architecture) | 1.x.x → 2.0.0 |
+| **MINOR** | Backward-compatible feature or utility additions | 1.0.0 → 1.1.0 |
+| **PATCH** | Fixes or small enhancements | 1.0.0 → 1.0.1 |
 
 ---
 
 ## 🧠 Contributing
 
 When submitting pull requests:
-1. Update the relevant section in this changelog.
-2. Follow commit message convention:  
+1. Update the relevant section in this changelog under **[Unreleased]**.  
+2. Follow the **Conventional Commit** format:  

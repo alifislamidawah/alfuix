@@ -1,0 +1,177 @@
+/*====== Varibles start =====*/
+// Triangle & Trapezoid size values in PX
+$triangle-sizes: ( 2:2, 3:3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 12: 12, 16: 16, 20: 20, 24: 24, 32: 32, 48: 48, 64: 64, 80: 80, 96: 96, 112: 112 );
+
+// Trapezoid size values in %
+$trapezoid-sizes: ( 10: 10%, 25: 25%, 50: 50%, 75: 75%);
+
+
+.al{
+    // Shape trinagle & trapezoid
+    @each $key, $value in $triangle-sizes {
+        //trinagle
+        &-triangle{
+            &-t-#{$key} {
+                border-left: $value+px solid transparent !important;
+                border-right: $value+px solid transparent !important;
+                border-bottom: $value+px solid !important;
+            }
+            &-b-#{$key} {
+                border-left: $value+px solid transparent !important;
+                border-right: $value+px solid transparent !important;
+                border-top: $value+px solid !important;
+            }
+        }
+        //trapezoid
+        &-trapezoid{
+            &-t-#{$key} {
+                border-bottom: $value+px solid !important;
+                border-left: $value+px solid transparent !important;
+                border-right: $value+px solid transparent !important;
+            }
+            &-b-#{$key} {
+                border-top: $value+px solid !important;
+                border-left: $value+px solid transparent !important;
+                border-right: $value+px solid transparent !important;
+            }
+            &-w-#{$key}px{
+                width: $value+px !important;
+            }
+            &-h-#{$key}px{
+                height: $value+px !important;
+            }
+        }
+    }
+
+    // Trapezoid %
+    @each $key, $value in $trapezoid-sizes {
+        &-trapezoid{
+            &-w-#{$key}{
+                width: calc($value + 6px) !important;
+            }
+            &-h-#{$key}{
+                height: calc($value + 6px) !important;
+            }
+        }
+    }
+
+    &-rounded{
+        &-fancy{
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% !important;
+            
+            &-2{
+                border-radius: 70% 30% 30% 70% / 30% 30% 70% 70% !important;
+            }
+            &-3{
+                border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%  !important;
+            }
+            &-4{
+                border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%  !important;
+            }
+        }
+    }
+}
+
+
+/* ===== clip Rtl & Ltr ===== */
+html{
+    &[dir=ltr]{
+        .al{
+            // Shape trinagle & trapezoid
+            @each $key, $value in $triangle-sizes {
+                //trinagle
+                &-triangle{
+                    &-ts-#{$key}{
+                        border-top: $value+px solid !important;
+                        border-right: $value+px solid transparent !important;
+                    }
+                    &-te-#{$key} {
+                        border-top: $value+px solid !important;
+                        border-left: $value+px solid transparent !important;
+                    }
+                    &-be-#{$key} {
+                        border-bottom: $value+px solid !important;
+                        border-left: $value+px solid transparent !important;
+                    }
+                    &-bs-#{$key} {
+                        border-bottom: $value+px solid !important;
+                        border-right: $value+px solid transparent !important;
+                    }
+                    &-e-#{$key} {
+                        border-top: $value+px solid transparent !important;
+                        border-left: $value+px solid !important;
+                        border-bottom: $value+px solid transparent !important;
+                    }
+                    &-s-#{$key} {
+                        border-top: $value+px solid transparent !important;
+                        border-right: $value+px solid !important;
+                        border-bottom: $value+px solid transparent !important;
+                    }
+                }
+                //trapezoid
+                &-trapezoid{
+                    &-s-#{$key} {
+                        border-right: $value+px solid !important;
+                        border-top: $value+px solid transparent !important;
+                        border-bottom: $value+px solid transparent !important;
+                    }
+                    &-e-#{$key} {
+                        border-left: $value+px solid !important;
+                        border-top: $value+px solid transparent !important;
+                        border-bottom: $value+px solid transparent !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &[dir=rtl]{
+        .al{
+            // Shape trinagle & trapezoid
+            @each $key, $value in $triangle-sizes {
+                //trinagle
+                &-triangle{
+                    &-ts-#{$key}{
+                        border-top: $value+px solid !important;
+                        border-left: $value+px solid transparent !important;
+                    }
+                    &-te-#{$key} {
+                        border-top: $value+px solid !important;
+                        border-right: $value+px solid transparent !important;
+                    }
+                    &-be-#{$key} {
+                        border-bottom: $value+px solid !important;
+                        border-right: $value+px solid transparent !important;
+                    }
+                    &-bs-#{$key} {
+                        border-bottom: $value+px solid !important;
+                        border-left: $value+px solid transparent !important;
+                    }
+                    &-e-#{$key} {
+                        border-top: $value+px solid transparent !important;
+                        border-right: $value+px solid !important;
+                        border-bottom: $value+px solid transparent !important;
+                    }
+                    &-s-#{$key} {
+                        border-top: $value+px solid transparent !important;
+                        border-left: $value+px solid !important;
+                        border-bottom: $value+px solid transparent !important;
+                    }
+                }
+                //trapezoid
+                &-trapezoid{
+                    &-s-#{$key} {
+                        border-left: $value+px solid !important;
+                        border-top: $value+px solid transparent !important;
+                        border-bottom: $value+px solid transparent !important;
+                    }
+                    &-e-#{$key} {
+                        border-right: $value+px solid !important;
+                        border-top: $value+px solid transparent !important;
+                        border-bottom: $value+px solid transparent !important;
+                    }
+                }
+            }
+        }
+    }
+}

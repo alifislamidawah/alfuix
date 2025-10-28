@@ -1,0 +1,17 @@
+.al{
+    &-header-clip{
+        &-one{
+            position: relative;
+            &-start{
+                clip-path: polygon(0% 0%, calc(100% - 23px) 0%, 100% 23px, 264px 23px, 226px 100%, 0% 100%);
+            }
+            &-end{
+                clip-path: polygon(139px 0%, 100% 0%, 100% 100%, 0% 100%, 26px 32px, 89px 32px);
+            }
+            &-top{
+                clip-path: polygon(23px 0%, 100% 0%, calc(100% - 37px) 23px, 0% 23px);
+            }
+        }
+    }
+}
+

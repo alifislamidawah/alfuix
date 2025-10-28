@@ -1,0 +1,169 @@
+// @use'../varibles' as*;
+
+.al{
+    // Cursor
+    &-cursor{
+        &-auto{
+            cursor: auto !important;
+        }
+        &-default{
+            cursor: default !important;
+        }
+        &-pointer{
+            cursor: pointer !important;
+        }
+        &-copy{
+            cursor: copy !important;
+        }
+        &-text{
+            cursor: text !important;
+        }
+        &-crosshair{
+            cursor: crosshair !important;
+        }
+        &-wait{
+            cursor: wait !important;
+        }
+        &-move{
+            cursor: move !important;
+        }
+        &-help{
+            cursor: help !important;
+        }
+        &-none{
+            cursor: none !important;
+        }
+        &-not-allowed{
+            cursor: not-allowed !important;
+        }
+        &-context-menu{
+            cursor: context-menu !important;
+        }
+        &-progress{
+            cursor: progress !important;
+        }
+        &-cell{
+            cursor: cell !important;
+        }
+        &-vertical-text{
+            cursor: vertical-text !important;
+        }
+        &-alias{
+            cursor: alias !important;
+        }
+        &-no-drop{
+            cursor: no-drop !important;
+        }
+        &-grab{
+            cursor: grab !important;
+        }
+        &-grabbing{
+            cursor: grabbing !important;
+        }
+        &-all-scroll{
+            cursor: all-scroll !important;
+        }
+        &-col-resize{
+            cursor: col-resize !important;
+        }
+        &-row-resize{
+            cursor: row-resize !important;
+        }
+        &-n-resize{
+            cursor: n-resize !important;
+        }
+        &-zoom-out{
+            cursor: zoom-out !important;
+        }
+        &-zoom-out{
+            cursor: zoom-out !important;
+        }
+    }
+    // Scroll
+    &-scroll{
+        &-smooth{
+            scroll-behavior: smooth !important;
+        }
+        &-auto{
+            scroll-behavior: auto !important;
+        }
+    }
+
+
+    &-scroll{
+        &-on-hover{
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+        &::-webkit-scrollbar-track {
+            background: rgba($color: var(--bs-primary-rgb), $alpha: .0); 
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgba($color: var(--bs-primary-rgb), $alpha: .0); 
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgba($color: var(--bs-warning-rgb), $alpha: .0); 
+        }
+        &:hover{
+            &::-webkit-scrollbar-track {
+            background: rgba($color: var(--bs-primary-rgb), $alpha: .15); 
+            }
+            &::-webkit-scrollbar-thumb {
+            background: rgba($color: var(--bs-primary-rgb), $alpha: .75); 
+            }
+            &::-webkit-scrollbar-thumb:hover {
+            background: rgba($color: var(--bs-warning-rgb), $alpha: .75); 
+            }
+        }
+        }
+    }
+
+    // List style
+    &-list{
+        &-none{
+            list-style: none !important;
+        }
+        &-circle{
+            list-style: circle !important;
+        }
+        &-square{
+            list-style: square !important;
+        }
+        &-decimal{
+            list-style: decimal !important;
+        }
+        &-decimal-leading-zero{
+            list-style: decimal-leading-zero !important;
+        }
+        &-disc{
+            list-style: disc !important;
+        }
+        &-upper-roman{
+            list-style: upper-roman !important;
+        }
+        &-lower-roman{
+            list-style: lower-roman !important;
+        }
+        &-upper-alpha{
+            list-style: upper-alpha !important;
+        }
+        &-lower-alpha{
+            list-style: lower-alpha !important;
+        }
+        &-arabic-indic{
+            list-style: arabic-indic !important;
+        }
+    }
+
+    //direction
+    &-rtl{
+        direction: rtl !important;
+    }
+    &-ltr{
+        direction: ltr !important;
+    }
+
+}

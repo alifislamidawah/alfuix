@@ -1,0 +1,1043 @@
+// @use'../varibles' as*;
+
+/*====== Varibles start =====*/
+// Background opacity
+$opacity: (0: 0, 5: 0.05, 10: 0.10, 25: 0.25, 50: 0.50, 75: 0.75, 100: 1);
+$fancy-border-size: (10:10, 20:20, 30:30, 40:40, 50:50, 60:60, 70:70, 80:80, 90:90, 100:100);
+
+
+
+.al{
+    // Placeholder
+    &-placeholder{
+        &-white{
+            &::placeholder{
+                color: rgba($color: var(--bs-white-rgb), $alpha: 1.0) !important;
+            }
+        }
+        &-black{
+            &::placeholder{
+                color: rgba($color: var(--bs-black-rgb), $alpha: 1.0) !important;
+            }
+        }
+        &-primary{
+            &::placeholder{
+                color: rgba($color: var(--bs-primary-rgb), $alpha: 1.0) !important;
+            }
+        }
+        &-secondary{
+            &::placeholder{
+                color: rgba($color: var(--bs-secondary-rgb), $alpha: 1.0) !important;
+            }
+        }
+        &-success{
+            &::placeholder{
+                color: rgba($color: var(--bs-success-rgb), $alpha: 1.0) !important;
+            }
+        }
+        &-warning{
+            &::placeholder{
+                color: rgba($color: var(--bs-warning-rgb), $alpha: 1.0) !important;
+            }
+        }
+        &-danger{
+            &::placeholder{
+                color: rgba($color: var(--bs-danger-rgb), $alpha: 1.0) !important;
+            }
+        }
+        
+        @each $key, $value in $opacity {
+            &-white{
+                &-#{$key}{
+                    &::placeholder{
+                        color: rgba($color: var(--bs-white-rgb), $alpha: $value) !important;
+                    }
+                }
+            }
+            &-black{
+                &-#{$key}{
+                    &::placeholder{
+                        color: rgba($color: var(--bs-black-rgb), $alpha: $value) !important;
+                    }
+                }
+            }
+            &-primary{
+                &-#{$key}{
+                    &::placeholder{
+                        color: rgba($color: var(--bs-primary-rgb), $alpha: $value) !important;
+                    }
+                }
+            }
+            &-secondary{
+                &-#{$key}{
+                    &::placeholder{
+                        color: rgba($color: var(--bs-secondary-rgb), $alpha: $value) !important;
+                    }
+                }
+            }
+            &-success{
+                &-#{$key}{
+                    &::placeholder{
+                        color: rgba($color: var(--bs-success-rgb), $alpha: $value) !important;
+                    }
+                }
+            }
+            &-warning{
+                &-#{$key}{
+                    &::placeholder{
+                        color: rgba($color: var(--bs-warning-rgb), $alpha: $value) !important;
+                    }
+                }
+            }
+            &-danger{
+                &-#{$key}{
+                    &::placeholder{
+                        color: rgba($color: var(--bs-danger-rgb), $alpha: $value) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    // Focus
+    &-no-focus{
+        &:focus{
+            outline: 0 !important;
+        }
+    }
+
+    // Hover
+    &-hover{
+        //Text color
+        &-text{
+            &-primary{
+                &:hover{
+                    color: var(--bs-primary) !important;
+                }
+            }
+            &-secondary{
+                &:hover{
+                    color: var(--bs-secondary) !important;
+                }
+            }
+            &-warning{
+                &:hover{
+                    color: var(--bs-warning) !important;
+                }
+            }
+            &-danger{
+                &:hover{
+                    color: var(--bs-danger) !important;
+                }
+            }
+            &-success{
+                &:hover{
+                    color: var(--bs-success) !important;
+                }
+            }
+            &-info{
+                &:hover{
+                    color: var(--bs-success) !important;
+                }
+            }
+            &-white{
+                &:hover{
+                    color: var(--bs-white) !important;
+                }
+            }
+            &-black{
+                &:hover{
+                    color: var(--bs-black) !important;
+                }
+            }
+            
+            @each $key, $value in $opacity {
+                &-primary{
+                    &-#{$key}{
+                        &:hover{
+                            color:rgba($color: var(--bs-primary-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-secondary{
+                    &-#{$key}{
+                        &:hover{
+                            color:rgba($color: var(--bs-secondary-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-success{
+                    &-#{$key}{
+                        &:hover{
+                            color:rgba($color: var(--bs-success-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-warning{
+                    &-#{$key}{
+                        &:hover{
+                            color:rgba($color: var(--bs-warning-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-danger{
+                    &-#{$key}{
+                        &:hover{
+                            color:rgba($color: var(--bs-danger-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-white{
+                    &-#{$key}{
+                        &:hover{
+                            color:rgba($color: var(--bs-white-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-black{
+                    &-#{$key}{
+                        &:hover{
+                            color:rgba($color: var(--bs-black-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+            }
+        }
+
+        //Background color
+        &-bg{
+            &-primary{
+                &:hover{
+                    background-color: var(--bs-primary) !important;
+                }
+            }
+            &-secondary{
+                &:hover{
+                    background-color: var(--bs-secondary) !important;
+                }
+            }
+            &-warning{
+                &:hover{
+                    background-color: var(--bs-warning) !important;
+                }
+            }
+            &-danger{
+                &:hover{
+                    background-color: var(--bs-danger) !important;
+                }
+            }
+            &-success{
+                &:hover{
+                    background-color: var(--bs-success) !important;
+                }
+            }
+            &-info{
+                &:hover{
+                    background-color: var(--bs-success) !important;
+                }
+            }
+            &-white{
+                &:hover{
+                    background-color: var(--bs-white) !important;
+                }
+            }
+            &-black{
+                &:hover{
+                    background-color: var(--bs-black) !important;
+                }
+            }
+            &-gradient{
+                &-primary{
+                    &:hover {
+                        background: linear-gradient(to left bottom, var(--bs-secondary), var(--bs-primary));
+                    }
+                }
+            }
+            
+            @each $key, $value in $opacity {
+                &-primary{
+                    &-#{$key}{
+                        &:hover{
+                            background-color:rgba($color: var(--bs-primary-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-secondary{
+                    &-#{$key}{
+                        &:hover{
+                            background-color:rgba($color: var(--bs-secondary-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-success{
+                    &-#{$key}{
+                        &:hover{
+                            background-color:rgba($color: var(--bs-success-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-warning{
+                    &-#{$key}{
+                        &:hover{
+                            background-color:rgba($color: var(--bs-warning-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-danger{
+                    &-#{$key}{
+                        &:hover{
+                            background-color:rgba($color: var(--bs-danger-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-info{
+                    &-#{$key}{
+                        &:hover{
+                            background-color:rgba($color: var(--bs-info-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-white{
+                    &-#{$key}{
+                        &:hover{
+                            background-color:rgba($color: var(--bs-white-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-black{
+                    &-#{$key}{
+                        &:hover{
+                            background-color:rgba($color: var(--bs-black-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+            }
+        }
+
+        //Border color
+        &-border{
+            &-primary{
+                &:hover{
+                    border-color: var(--bs-primary) !important;
+                }
+            }
+            &-secondary{
+                &:hover{
+                    border-color: var(--bs-secondary) !important;
+                }
+            }
+            &-warning{
+                &:hover{
+                    border-color: var(--bs-warning) !important;
+                }
+            }
+            &-danger{
+                &:hover{
+                    border-color: var(--bs-danger) !important;
+                }
+            }
+            &-success{
+                &:hover{
+                    border-color: var(--bs-success) !important;
+                }
+            }
+            &-info{
+                &:hover{
+                    border-color: var(--bs-success) !important;
+                }
+            }
+            &-white{
+                &:hover{
+                    border-color: var(--bs-white) !important;
+                }
+            }
+            &-black{
+                &:hover{
+                    border-color: var(--bs-black) !important;
+                }
+            }
+            
+            @each $key, $value in $opacity {
+                &-primary{
+                    &-#{$key}{
+                        &:hover{
+                            border-color:rgba($color: var(--bs-primary-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-secondary{
+                    &-#{$key}{
+                        &:hover{
+                            border-color:rgba($color: var(--bs-secondary-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-success{
+                    &-#{$key}{
+                        &:hover{
+                            border-color:rgba($color: var(--bs-success-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-warning{
+                    &-#{$key}{
+                        &:hover{
+                            border-color:rgba($color: var(--bs-warning-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-danger{
+                    &-#{$key}{
+                        &:hover{
+                            border-color:rgba($color: var(--bs-danger-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-white{
+                    &-#{$key}{
+                        &:hover{
+                            border-color:rgba($color: var(--bs-white-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-black{
+                    &-#{$key}{
+                        &:hover{
+                            border-color:rgba($color: var(--bs-black-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+            }
+        }
+
+        //Outline color
+        &-outline{
+            &-primary{
+                &:hover{
+                    outline-color: var(--bs-primary) !important;
+                }
+            }
+            &-secondary{
+                &:hover{
+                    outline-color: var(--bs-secondary) !important;
+                }
+            }
+            &-warning{
+                &:hover{
+                    outline-color: var(--bs-warning) !important;
+                }
+            }
+            &-danger{
+                &:hover{
+                    outline-color: var(--bs-danger) !important;
+                }
+            }
+            &-success{
+                &:hover{
+                    outline-color: var(--bs-success) !important;
+                }
+            }
+            &-info{
+                &:hover{
+                    outline-color: var(--bs-success) !important;
+                }
+            }
+            &-white{
+                &:hover{
+                    outline-color: var(--bs-white) !important;
+                }
+            }
+            &-black{
+                &:hover{
+                    outline-color: var(--bs-black) !important;
+                }
+            }
+            
+            @each $key, $value in $opacity {
+                &-primary{
+                    &-#{$key}{
+                        &:hover{
+                            outline-color:rgba($color: var(--bs-primary-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-secondary{
+                    &-#{$key}{
+                        &:hover{
+                            outline-color:rgba($color: var(--bs-secondary-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-success{
+                    &-#{$key}{
+                        &:hover{
+                            outline-color:rgba($color: var(--bs-success-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-warning{
+                    &-#{$key}{
+                        &:hover{
+                            outline-color:rgba($color: var(--bs-warning-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-danger{
+                    &-#{$key}{
+                        &:hover{
+                            outline-color:rgba($color: var(--bs-danger-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-white{
+                    &-#{$key}{
+                        &:hover{
+                            outline-color:rgba($color: var(--bs-white-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+                &-black{
+                    &-#{$key}{
+                        &:hover{
+                            outline-color:rgba($color: var(--bs-black-rgb), $alpha: $value) !important;
+                        }
+                    }  
+                }
+            }
+        }
+
+        //Rotate
+        &-rotate{
+            &-360{
+                &:hover{
+                    transform: rotate(360deg) !important;
+                }
+            }
+            &-270{
+                &:hover{
+                    transform: rotate(270deg) !important;
+                }
+            }
+            &-180{
+                &:hover{
+                    transform: rotate(180deg) !important;
+                }
+            }
+            &-90{
+                &:hover{
+                    transform: rotate(90deg) !important;
+                }
+            }
+            &-45{
+                &:hover{
+                    transform: rotate(45deg) !important;
+                }
+            }
+        }
+
+        //Scale
+        &-scale{
+            &-1{
+                &:hover{
+                    transform: scale(1.15) !important;
+                }
+            }
+            &-2{
+                &:hover{
+                    transform: scale(1.25) !important;
+                }
+            }
+            &-3{
+                &:hover{
+                    transform: scale(1.75) !important;
+                }
+            }
+            &-4{
+                &:hover{
+                    transform: scale(2) !important;
+                }
+            }
+            &-5{
+                &:hover{
+                    transform: scale(2.5) !important;
+                }
+            }
+        }
+        
+        // border gradient
+        &-border-gradient {
+            &:hover{
+                --al-be-border-angle: 0turn;
+                border: solid var(--bs-border-width) transparent;
+                background: conic-gradient(from var(--al-border-angle), #213, #112 5%, #112 60%, #213 95%) padding-box,
+                    conic-gradient(from var(--al-border-angle), transparent 25%, #08f, #f03 99%, transparent) border-box;
+
+                animation-name: be-bg-spin;
+                animation-duration: 3s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                @keyframes be-bg-spin {
+                    to {
+                    --al-border-angle: 1turn;
+                    }
+                }
+            }
+        }
+        
+        //glass shine effect
+        &-glass-shine {
+            overflow: hidden;
+            &:before {
+                content: "";
+                position: absolute;
+                top:-25%;
+                height: 200%;
+                width: 50px;
+                transform: rotate(30deg);
+                background-color: rgba($color: #fff, $alpha: 0.75);
+                left: -100%;
+            }
+            &:hover {
+                &:before {
+                transition: left 1200ms ease;
+                left: 130%;
+                }
+            }
+        }
+        
+        //glow
+        &-glow {
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                background: linear-gradient(320deg, #e91e63, #ff5722, #ffeb3b, #b9ff68, #0fac81, #084298, #771afe, #970374, #e91e63);
+                top: -4px;
+                left: -4px;
+                background-size: 500%;
+                filter: blur(5px);
+                width: calc(100% + 8px);
+                height: calc(100% + 8px);
+                animation: be-animation-glowing 15s linear infinite;
+                opacity: 0;
+                transition: opacity .5s ease-in-out;
+            }
+            &:hover{
+                &:before {
+                    opacity: 1;
+                }
+            }
+            &-pill{
+                &:before {
+                    border-radius: 9999999px !important;
+                }
+            }
+            &-circle{
+                &:before {
+                    border-radius: 50% !important;
+                }
+            }
+
+            @keyframes be-animation-glowing {
+                0% { background-position: 0 0; }
+                50% { background-position: 500% 0; }
+                100% { background-position: 0 0; }
+            }
+        }
+
+        //shadow
+        &-shadow {
+            transition: 0.5s;
+            &:hover, &:focus{
+                animation: be-animation-shadow 1s;
+                box-shadow: 0 0 0 30px rgb(151, 3, 116, 0);
+            }
+            &-infinite{
+                &:hover, &:focus{
+                animation: be-animation-shadow 1s infinite;
+                    box-shadow: 0 0 0 30px rgb(151, 3, 116, 0);
+                }
+            }
+
+            @keyframes be-animation-shadow {
+                0% {
+                    box-shadow: 0 0 0 0 currentColor;
+                }
+            }
+        }
+
+        //fancy border
+        &-fancy{
+            &-border{
+                position: relative;
+                &:before, &:after{
+                    content:"";
+                    width: 0;
+                    height: 2px;
+                    position: absolute;
+                    transition: all 0.2s linear;
+                    background: currentColor;
+                }
+                
+                .al-hover-fancy-border-line{
+                    &:before, &:after{
+                        content:"";
+                        width:2px;
+                        height:0;
+                        position: absolute;
+                        transition: all 0.2s linear;
+                        background: currentColor;
+                    }
+                }
+
+                &:hover{
+                    &:before, &:after{
+                        width: 100%;
+                    }
+                    .al-hover-fancy-border-line{
+                        &:before, &:after{
+                            height: 100%;
+                        }
+                    }
+                }
+
+                &-1{
+                    &:before, &:after{
+                        transition-delay: 0.2s;
+                    }
+                    &:before{
+                        right: 0;
+                        top: 0;
+                        transition-delay: 0.2s;
+                    }
+                    &:after{
+                        left: 0;
+                        bottom: 0;
+                    }
+                    .al-hover-fancy-border-line{
+                        &:before, &:after{
+                            transition-delay: 0s;
+                        }
+                        &::before{
+                            left: 0;
+                            top: 0;
+                        }
+                        &::after{
+                            right: 0;
+                            bottom: 0;
+                        }
+                    }
+
+                    &:hover{
+                        &::before, &::after{
+                            transition-delay: 0s;
+                        }
+                        .al-hover-fancy-border-line{
+                            &::before, &::after{
+                                transition-delay: 0.2s;
+                            }
+                        }
+                    }
+                }
+
+                &-2{
+                    &:before, &:after{
+                        transition-delay: 0s;
+                    }
+                    &:before{
+                        right: 0;
+                        top: 0;
+                    }
+                    &:after{
+                        left: 0;
+                        bottom: 0;
+                    }
+
+                    .al-hover-fancy-border-line{
+                        &:before, &:after{
+                            transition-delay: 0.2s;
+                        }
+                        &:before{
+                            left: 0;
+                            top: 0;
+                        }
+                        &:after{
+                            right: 0;
+                            bottom: 0;
+                        }
+                    }
+
+                    &:hover{
+                        &::before, &::after{
+                            transition-delay: 0.2s;
+                        }
+                        .al-hover-fancy-border-line{
+                            &::before, &::after{
+                                transition-delay: 0s;
+                            }
+                        }
+                    }
+                }
+                
+                &-3{
+                    &:before{
+                        right: 0;
+                        top: 0;
+                        transition-delay: 0.2s;
+                    }
+                    &:after{
+                        left: 0;
+                        bottom: 0;
+                        transition-delay: 0.6s;
+                    }
+
+                    .al-hover-fancy-border-line{
+                        &:before{
+                            transition-delay: 0s;
+                            left: 0;
+                            top: 0;
+                        }
+                        &:after{
+                            transition-delay: 0.4s;
+                            right: 0;
+                            bottom: 0
+                        }
+                    }
+
+                    &:hover{
+                        &::before{
+                            transition-delay: 0.4s;
+                        }
+                        &::after{
+                            transition-delay: 0s;
+                        }
+                        .al-hover-fancy-border-line{
+                            &::before{
+                                transition-delay: 0.6s;
+                            }
+                            &::after{
+                                transition-delay: 0.2s;
+                            }
+                        }
+                    }
+                }
+                
+                &-4{
+                    &:before{
+                        left: 0;
+                        top: 0;
+                        transition-duration: 0.4s;
+                    }
+                    &:after{
+                        right:0;
+                        bottom: 0;
+                        transition-duration: 0.4s;
+                    }
+
+                    .al-hover-fancy-border-line{
+                        &:before{
+                            left: 0;
+                            top: 0;
+                            transition-duration: 0.4s;
+                        }
+                        &:after{
+                            right:0;
+                            bottom: 0;
+                            transition-duration: 0.4s;
+                        }
+                    }
+                }
+                
+                &-5{
+                    &:before{
+                        right: 0;
+                        top: 0;
+                        transition-duration: 0.4s;
+                    }
+                    &:after{
+                        left:0;
+                        bottom: 0;
+                        transition-duration: 0.4s;
+                    }
+
+                    .al-hover-fancy-border-line{
+                        &:before{
+                            left: 0;
+                            bottom: 0;
+                            transition-duration: 0.4s;
+                        }
+                        &:after{
+                            right:0;
+                            top: 0;
+                            transition-duration: 0.4s;
+                        }
+                    }
+                }
+                
+                &-6{
+                    &:before{
+                        left: 50%;
+                        top: 0;
+                        transition-duration: 0.4s;
+                    }
+                    &:after{
+                        left: 50%;
+                        bottom: 0;
+                        transition-duration: 0.4s;
+                    }
+
+                    .al-hover-fancy-border-line{
+                        &:before{
+                            left: 0;
+                            top: 50%;
+                            transition-duration: 0.4s;
+                        }
+                        &:after{
+                            right: 0;
+                            top: 50%;
+                            transition-duration: 0.4s;
+                        }
+                    }
+
+                    &:hover{
+                        &::before, &::after{
+                            left: 0;
+                        }
+                        .al-hover-fancy-border-line{
+                            &::before, &::after{
+                                top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //parent child show / hide
+        &-show{
+            &-hide{
+                display: none;
+            }
+            &:hover{
+                .al-hover-show-hide{
+                    display: block;
+                }
+            }
+        }
+
+        //stop animation
+        &-stop-animation{
+            &:hover{
+                animation-play-state: paused !important;
+            }
+        }
+    }
+
+    //fancy border
+    &-fancy {
+        //fancy border
+        &-border{
+            position: relative;
+            &::after, &::before{
+                content: "";
+                position: absolute;
+                width: 20%;
+                height: 30%;
+                border: 2px solid;
+                transition: all 0.6s ease;
+            }
+            &::before{
+                top: -6px;
+                left: -6px;
+                border-color: currentColor transparent transparent currentColor;
+            }
+            &::after{
+                bottom: -6px;
+                right: -6px;
+                border-color: transparent currentColor currentColor transparent;
+            }
+
+            &-size{
+                @each $key, $value in $fancy-border-size {
+                    &-#{$key}{
+                        &::after, &::before{
+                            width: $value+px;
+                            height: $value+px;
+                        }
+                    }
+                }
+            }
+
+            &:hover{
+                &::before, &::after{
+                    width: calc(100% + 12px);
+                    height: calc(100% + 12px);
+                }
+            }
+
+            //double border
+            &-double {
+                position: relative;
+                &::after, &::before{
+                    content: "";
+                    position: absolute;
+                    width: 20%;
+                    height: 20%;
+                    border: 2px solid;
+                    transition: all 0.6s ease;
+                }
+                &::before{
+                    top: -6px;
+                    left: -6px;
+                    border-color: currentColor transparent transparent currentColor;
+                }
+                &::after{
+                    bottom: -6px;
+                    right: -6px;
+                    border-color: transparent currentColor currentColor transparent;
+                }
+
+                &-size{
+                    @each $key, $value in $fancy-border-size {
+                        &-#{$key}{
+                            &::after, &::before{
+                                width: $value+px;
+                                height: $value+px;
+                            }
+                        }
+                    }
+                }
+
+                &:hover{
+                    &::before, &::after{
+                        border-color: currentColor;
+                        width: calc(100% + 22px);
+                        height: calc(100% + 22px);
+                    }
+                }
+            }
+        }
+    }
+
+    //hide before, after pseuo
+    &-no{
+        &-before{
+            &::before{
+                display: none !important;
+            }
+        }
+        &-after{
+            &::after{
+                display: none !important;
+            }
+        }
+    }
+}
+        
+
+
+
+
+
+

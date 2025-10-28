@@ -1,0 +1,114 @@
+// @use'../varibles' as*;
+
+/*====== Varibles start =====*/
+$blur: (0: 0, 2: 2, 4: 4, 8: 8, 16: 16, 32: 32, 64: 64, 100: 100);
+$brightness: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 100: 100%);
+$contrast: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 100: 100%);
+$grayscale: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 100: 100%);
+$hue-rotate: (0: 0, 45: 45, 90: 90, 180: 180, 270: 270, 360: 360);
+$invert: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 100: 100%);
+$saturate: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 100: 100%);
+$sepia: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 100: 100%);
+
+.al{
+// blur
+    @each $key, $value in $blur {
+        &-blur-#{$key} {
+            filter: blur($value+px) !important;
+        }
+    }
+    // brightness
+    @each $key, $value in $brightness {
+        &-brightness-#{$key} {
+            filter: brightness($value) !important;
+        }
+    }
+    // contrast
+    @each $key, $value in $contrast {
+        &-contrast-#{$key} {
+            filter: contrast($value) !important;
+        }
+    }
+    // grayscale
+    @each $key, $value in $grayscale {
+        &-grayscale-#{$key} {
+            filter: grayscale($value) !important;
+        }
+    }
+    // hue-rotate
+    @each $key, $value in $hue-rotate {
+        &-hue-rotate-#{$key} {
+            filter: hue-rotate($value+deg) !important;
+        }
+    }
+    // invert
+    @each $key, $value in $invert {
+        &-invert-#{$key} {
+            filter: invert($value) !important;
+        }
+    }
+    // saturate
+    @each $key, $value in $saturate {
+        &-saturate-#{$key} {
+            filter: saturate($value) !important;
+        }
+    }
+    // sepia
+    @each $key, $value in $sepia {
+        &-sepia-#{$key} {
+            filter: sepia($value) !important;
+        }
+    }
+
+    //Backdrop
+    &-backdrop{
+        // blur
+        @each $key, $value in $blur {
+            &-blur-#{$key} {
+                backdrop-filter: blur($value+px) !important;
+            }
+        }
+        // brightness
+        @each $key, $value in $brightness {
+            &-brightness-#{$key} {
+                backdrop-filter: brightness($value) !important;
+            }
+        }
+        // contrast
+        @each $key, $value in $contrast {
+            &-contrast-#{$key} {
+                backdrop-filter: contrast($value) !important;
+            }
+        }
+        // grayscale
+        @each $key, $value in $grayscale {
+            &-grayscale-#{$key} {
+                backdrop-filter: grayscale($value) !important;
+            }
+        }
+        // hue-rotate
+        @each $key, $value in $hue-rotate {
+            &-hue-rotate-#{$key} {
+                backdrop-filter: hue-rotate($value+deg) !important;
+            }
+        }
+        // invert
+        @each $key, $value in $invert {
+            &-invert-#{$key} {
+                backdrop-filter: invert($value) !important;
+            }
+        }
+        // saturate
+        @each $key, $value in $saturate {
+            &-saturate-#{$key} {
+                backdrop-filter: saturate($value) !important;
+            }
+        }
+        // sepia
+        @each $key, $value in $sepia {
+            &-sepia-#{$key} {
+                backdrop-filter: sepia($value) !important;
+            }
+        }
+    }
+}

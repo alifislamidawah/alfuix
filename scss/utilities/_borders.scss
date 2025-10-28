@@ -1,0 +1,218 @@
+// @use'../varibles' as*;
+
+/*====== Varibles start =====*/
+$border-size: ( 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10);
+$radius-size: ( 0:0, 2:2, 3:3, 4:4, 5:5, 6:6, 8:8, 10:10, 12:12, 15:15, 16:16, 20:20, 24:24, 32:32, 48:48, 64:64);
+
+$outline-size: ( 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10);
+$outline-opacity: ( 5: 0.05, 10: 0.10, 25: 0.25, 50: 0.50, 75: 0.75);
+
+.al{
+    //border
+    &-border{        
+        @each $key, $value in $border-size {
+            &-#{$key}{
+                --bs-border-width: #{$value+px} !important;
+            }
+        }
+
+        //style
+        &-dotted{
+            --bs-border-style:dotted !important;
+        }
+        &-double{
+            --bs-border-style:double !important;
+        }
+    }
+
+    //border radius
+    &-rounded{    
+        @each $key, $value in $radius-size {
+            &-#{$key}{
+                border-radius: #{$value+px} !important;
+            }
+            &-top-#{$key}{
+                border-top-left-radius: #{$value+px} !important;
+                border-top-right-radius: #{$value+px} !important;
+            }
+            &-bottom-#{$key}{
+                border-bottom-left-radius: #{$value+px} !important;
+                border-bottom-right-radius: #{$value+px} !important;
+            }
+        }
+    }
+    
+    //outline
+    &-outline{
+        //Size
+        outline: 1px solid !important;
+        
+        @each $key, $value in $outline-size {
+            &-#{$key}{
+                outline-width: $value+px !important;
+            }
+        }
+        
+
+        //Offset
+        @each $key, $value in $outline-size {
+            &-offset-#{$key}{
+                outline-offset: $value+px !important;
+            } 
+        }
+        
+
+        //Color
+        &-primary{
+            outline-color:#{rgba($color: var(--bs-primary-rgb), $alpha: 1.0)} !important; 
+        }
+        &-secondary{
+            outline-color:#{rgba($color: var(--bs-secondary-rgb), $alpha: 1.0)} !important; 
+        }
+        &-success{
+            outline-color:#{rgba($color: var(--bs-success-rgb), $alpha: 1.0)} !important; 
+        }
+        &-warning{
+            outline-color:#{rgba($color: var(--bs-warning-rgb), $alpha: 1.0)} !important; 
+        }
+        &-danger{
+            outline-color:#{rgba($color: var(--bs-danger-rgb), $alpha: 1.0)} !important; 
+        }
+        &-white{
+            outline-color:#{rgba($color: var(--bs-white-rgb), $alpha: 1.0)} !important;  
+        }
+        &-black{
+            outline-color:#{rgba($color: var(--bs-black-rgb), $alpha: 1.0)} !important;  
+        }
+        @each $key, $value in $outline-opacity {
+            &-primary{
+                &-#{$key}{
+                    outline-color:rgba($color: var(--bs-primary-rgb), $alpha: $value) !important;
+                }  
+            }
+            &-secondary{
+                &-#{$key}{
+                    outline-color:rgba($color: var(--bs-secondary-rgb), $alpha: $value) !important;
+                }  
+            }
+            &-success{
+                &-#{$key}{
+                    outline-color:rgba($color: var(--bs-success-rgb), $alpha: $value) !important;
+                }  
+            }
+            &-warning{
+                &-#{$key}{
+                    outline-color:rgba($color: var(--bs-warning-rgb), $alpha: $value) !important;
+                }  
+            }
+            &-danger{
+                &-#{$key}{
+                    outline-color:rgba($color: var(--bs-danger-rgb), $alpha: $value) !important;
+                }  
+            }
+            &-white{
+                &-#{$key}{
+                    outline-color:rgba($color: var(--bs-white-rgb), $alpha: $value) !important;
+                }  
+            }
+            &-black{
+                &-#{$key}{
+                    outline-color:rgba($color: var(--bs-black-rgb), $alpha: $value) !important;
+                }  
+            }
+        }
+
+
+        //Type
+        &-solid{
+            outline-style: solid !important;
+        }
+        &-dotted{
+            outline-style: dotted !important;
+        }
+        &-dashed{
+            outline-style: dashed !important;
+        }
+        &-double{
+            outline-style: double !important;
+        }
+    }
+
+}
+
+/* ===== Border Radius RTL & LTR ===== */
+html{
+    &[dir=ltr]{
+        .al{
+            &-rounded{    
+                @each $key, $value in $radius-size {
+                    &-start{
+                        &-#{$key}{
+                            border-top-left-radius: #{$value+px} !important;
+                            border-bottom-left-radius: #{$value+px} !important;
+                        }
+
+                        &-top-#{$key}{
+                            border-top-left-radius: #{$value+px} !important;
+                        }
+                        &-bottom-#{$key}{
+                            border-bottom-left-radius: #{$value+px} !important;
+                        }
+                    }
+
+                    &-end{
+                        &-#{$key}{
+                            border-top-right-radius: #{$value+px} !important;
+                            border-bottom-right-radius: #{$value+px} !important;
+                        }
+                        
+                        &-top-#{$key}{
+                            border-top-right-radius: #{$value+px} !important;
+                        }
+                        &-bottom-#{$key}{
+                            border-bottom-right-radius: #{$value+px} !important;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    
+    &[dir=rtl]{
+        .al{
+            &-rounded{    
+                @each $key, $value in $radius-size {
+                    &-start{
+                        &-#{$key}{
+                            border-top-right-radius: #{$value+px} !important;
+                            border-bottom-right-radius: #{$value+px} !important;
+                        }
+
+                        &-top-#{$key}{
+                            border-top-right-radius: #{$value+px} !important;
+                        }
+                        &-bottom-#{$key}{
+                            border-bottom-right-radius: #{$value+px} !important;
+                        }
+                    }
+
+                    &-end{
+                        &-#{$key}{
+                            border-top-left-radius: #{$value+px} !important;
+                            border-bottom-left-radius: #{$value+px} !important;
+                        }
+                        
+                        &-top-#{$key}{
+                            border-top-left-radius: #{$value+px} !important;
+                        }
+                        &-bottom-#{$key}{
+                            border-bottom-left-radius: #{$value+px} !important;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

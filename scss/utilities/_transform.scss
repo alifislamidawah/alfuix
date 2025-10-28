@@ -1,0 +1,64 @@
+// @use'../varibles' as*;
+
+/*====== Varibles start =====*/
+//Transform (skew, rotate & scale)
+$transform-sizes: (1: 45, 2: 90, 3: 180, 4: 270, 5: 360);
+
+
+.al{
+    // Skew & Rotate
+    @each $key, $value in $transform-sizes {
+        //Skew
+        &-skew{
+            // Skew with positive value
+            &-#{$key} {
+                transform: skew($value+deg) !important;
+            }
+            // Skew with negative value
+            &-n-#{$key} {
+                transform: skewY(-$value+deg) !important;
+            }
+            // SkewX with negative & positive value
+            &-x {
+                &-#{$key}{
+                    transform: skewX($value+deg) !important;
+                }
+                &-n-#{$key} {
+                    transform: skewX(-$value+deg) !important;
+                }
+            }
+            // SkewY with negative & positive value
+            &-y {
+                &-#{$key}{
+                    transform: skewY($value+deg) !important;
+                }
+                &-n-#{$key} {
+                    transform: skewY(-$value+deg) !important;
+                }
+            }
+        }
+        // Rotate
+        &-rotate {
+            // Rotate with positive value utilities
+            &-#{$key}{
+                transform: rotate($value+deg) !important;
+            }
+            // Rotate with negative value
+            &-n-#{$key} {
+                transform: rotate(-$value+deg) !important;
+            }
+        }
+    }
+
+    // Scale (flip horizontal & vertical)
+    &-flip{
+        transform: scale(1) !important;
+        &-x{
+            transform: scaleX(-1) !important;
+        }
+        &-y{
+            transform: scaleY(-1) !important;
+        }
+    }
+}
+

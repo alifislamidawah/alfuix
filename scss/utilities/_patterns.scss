@@ -1,0 +1,381 @@
+// @use'../varibles' as*;
+$pattern-opacity: (
+    2: 0.02,
+    3: 0.03,
+    4: 0.04,
+    5: 0.05,
+    10: 0.10,
+    25: 0.25,
+    50: 0.50,
+    75: 0.75
+);
+
+.al {
+    &-pattern {
+        &-checks {
+            &-sm {
+                background-image: repeating-linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%, transparent 75%, var(--pattern-color) 75%, var(--pattern-color)), repeating-linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%, transparent 75%, var(--pattern-color) 75%, var(--pattern-color));
+                background-position: 0 0, 10px 10px;
+                background-size: calc(2 * 10px) calc(2 * 10px);
+            }
+
+            &-md {
+                background-image: repeating-linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%, transparent 75%, var(--pattern-color) 75%, var(--pattern-color)), repeating-linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%, transparent 75%, var(--pattern-color) 75%, var(--pattern-color));
+                background-position: 0 0, 25px 25px;
+                background-size: calc(2 * 25px) calc(2 * 25px);
+            }
+
+            &-lg {
+                background-image: repeating-linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%, transparent 75%, var(--pattern-color) 75%, var(--pattern-color)), repeating-linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%, transparent 75%, var(--pattern-color) 75%, var(--pattern-color));
+                background-position: 0 0, 50px 50px;
+                background-size: calc(2 * 50px) calc(2 * 50px);
+            }
+
+            &-xl {
+                background-image: repeating-linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%, transparent 75%, var(--pattern-color) 75%, var(--pattern-color)), repeating-linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%, transparent 75%, var(--pattern-color) 75%, var(--pattern-color));
+                background-position: 0 0, 100px 100px;
+                background-size: calc(2 * 100px) calc(2 * 100px);
+            }
+        }
+
+        &-grid {
+            &-sm {
+                background-image: linear-gradient(var(--pattern-color) 1px, transparent 1px), linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+                background-size: 10px 10px;
+            }
+
+            &-md {
+                background-image: linear-gradient(var(--pattern-color) 1px, transparent 1px), linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+                background-size: 25px 25px;
+            }
+
+            &-lg {
+                background-image: linear-gradient(var(--pattern-color) 1px, transparent 1px), linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+                background-size: 50px 50px;
+            }
+
+            &-xl {
+                background-image: linear-gradient(var(--pattern-color) 1px, transparent 1px), linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+                background-size: 100px 100px;
+            }
+            
+            &-double {
+                background-image: linear-gradient(var(--pattern-color) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--pattern-color) 1px, transparent 1px),
+                    linear-gradient(var(--pattern-color) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--pattern-color) 1px, transparent 1px)!important;
+                background-size: 90px 90px, 90px 90px, 15px 15px, 15px 15px, 1% 100% !important;
+                background-position: 16px 16px, 16px 16px, 16px 16px, 16px 16px, 0px 0px !important;
+            }
+        }
+
+        &-dots {
+            &-sm {
+                background-image: radial-gradient(var(--pattern-color) .5px, transparent .5px);
+                background-size: calc(10 * .5px) calc(10 * .5px);
+            }
+
+            &-md {
+                background-image: radial-gradient(var(--pattern-color) 1px, transparent 1px);
+                background-size: calc(10 * 1px) calc(10 * 1px);
+            }
+
+            &-lg {
+                background-image: radial-gradient(var(--pattern-color) 1.5px, transparent 1.5px);
+                background-size: calc(10 * 1.5px) calc(10 * 1.5px);
+            }
+
+            &-xl {
+                background-image: radial-gradient(var(--pattern-color) 2px, transparent 2px);
+                background-size: calc(10 * 2px) calc(10 * 2px);
+            }
+        }
+
+        &-cross-dots {
+            &-sm {
+                background-image: radial-gradient(var(--pattern-color) .5px, transparent .5px), radial-gradient(var(--pattern-color) .5px, transparent .5px);
+                background-size: calc(20 * .5px) calc(20 * .5px);
+                background-position: 0 0, calc(10 * .5px) calc(10 * .5px);
+            }
+
+            &-md {
+                background-image: radial-gradient(var(--pattern-color) 1px, transparent 1px), radial-gradient(var(--pattern-color) 1px, transparent 1px);
+                background-size: calc(20 * 1px) calc(20 * 1px);
+                background-position: 0 0, calc(10 * 1px) calc(10 * 1px);
+            }
+
+            &-lg {
+                background-image: radial-gradient(var(--pattern-color) 2px, transparent 2px), radial-gradient(var(--pattern-color) 2px, transparent 2px);
+                background-size: calc(20 * 2px) calc(20 * 2px);
+                background-position: 0 0, calc(10 * 2px) calc(10 * 2px);
+            }
+
+            &-xl {
+                background-image: radial-gradient(var(--pattern-color) 1.5px, transparent 1.5px), radial-gradient(var(--pattern-color) 1.5px, transparent 1.5px);
+                background-size: calc(20 * 1.5px) calc(20 * 1.5px);
+                background-position: 0 0, calc(10 * 1.5px) calc(10 * 1.5px);
+            }
+        }
+
+        &-diagonal-lines {
+            &-sm {
+                background-image: repeating-linear-gradient(45deg, var(--pattern-color) 0, var(--pattern-color) 1px, transparent 0, transparent 50%);
+                background-size: 10px 10px;
+            }
+
+            &-md {
+                background-image: repeating-linear-gradient(45deg, var(--pattern-color) 0, var(--pattern-color) 1px, transparent 0, transparent 50%);
+                background-size: 25px 25px;
+            }
+
+            &-lg {
+                background-image: repeating-linear-gradient(45deg, var(--pattern-color) 0, var(--pattern-color) 1px, transparent 0, transparent 50%);
+                background-size: 50px 50px;
+            }
+
+            &-xl {
+                background-image: repeating-linear-gradient(45deg, var(--pattern-color) 0, var(--pattern-color) 1px, transparent 0, transparent 50%);
+                background-size: 100px 100px;
+            }
+        }
+
+        &-horizontal-lines {
+            &-sm {
+                background-image: repeating-linear-gradient(0deg, var(--pattern-color), var(--pattern-color) 1px, transparent 1px, transparent);
+                background-size: 10px 10px;
+            }
+
+            &-md {
+                background-image: repeating-linear-gradient(0deg, var(--pattern-color), var(--pattern-color) 1px, transparent 1px, transparent);
+                background-size: 25px 25px;
+            }
+
+            &-lg {
+                background-image: repeating-linear-gradient(0deg, var(--pattern-color), var(--pattern-color) 1px, transparent 1px, transparent);
+                background-size: 50px 50px;
+            }
+
+            &-xl {
+                background-image: repeating-linear-gradient(0deg, var(--pattern-color), var(--pattern-color) 1px, transparent 1px, transparent);
+                background-size: 100px 100px;
+            }
+        }
+
+        &-vertical-lines {
+            &-sm {
+                background-image: repeating-linear-gradient(to right, var(--pattern-color), var(--pattern-color) 1px, transparent 1px, transparent);
+                background-size: 10px 10px;
+            }
+
+            &-md {
+                background-image: repeating-linear-gradient(to right, var(--pattern-color), var(--pattern-color) 1px, transparent 1px, transparent);
+                background-size: 25px 25px;
+            }
+
+            &-lg {
+                background-image: repeating-linear-gradient(to right, var(--pattern-color), var(--pattern-color) 1px, transparent 1px, transparent);
+                background-size: 50px 50px;
+            }
+
+            &-xl {
+                background-image: repeating-linear-gradient(to right, var(--pattern-color), var(--pattern-color) 1px, transparent 1px, transparent);
+                background-size: 100px 100px;
+            }
+        }
+
+        &-diagonal-stripes {
+            &-sm {
+                background: repeating-linear-gradient(45deg, transparent, transparent 10px, var(--pattern-color) 10px, var(--pattern-color) calc(2 * 10px));
+            }
+
+            &-md {
+                background: repeating-linear-gradient(45deg, transparent, transparent 25px, var(--pattern-color) 25px, var(--pattern-color) calc(2 * 25px));
+            }
+
+            &-lg {
+                background: repeating-linear-gradient(45deg, transparent, transparent 50px, var(--pattern-color) 50px, var(--pattern-color) calc(2 * 50px));
+            }
+
+            &-xl {
+                background: repeating-linear-gradient(45deg, transparent, transparent 100px, var(--pattern-color) 100px, var(--pattern-color) calc(2 * 100px));
+            }
+        }
+
+        &-horizontal-stripes {
+            &-sm {
+                background-image: linear-gradient(0deg, transparent 50%, var(--pattern-color) 50%);
+                background-size: 10px 10px;
+            }
+
+            &-md {
+                background-image: linear-gradient(0deg, transparent 50%, var(--pattern-color) 50%);
+                background-size: 25px 25px;
+            }
+
+            &-lg {
+                background-image: linear-gradient(0deg, transparent 50%, var(--pattern-color) 50%);
+                background-size: 50px 50px;
+            }
+
+            &-xl {
+                background-image: linear-gradient(0deg, transparent 50%, var(--pattern-color) 50%);
+                background-size: 100px 100px;
+            }
+        }
+
+        &-vertical-stripes {
+            &-sm {
+                background-image: linear-gradient(90deg, transparent 50%, var(--pattern-color) 50%);
+                background-size: 10px 10px;
+            }
+
+            &-md {
+                background-image: linear-gradient(90deg, transparent 50%, var(--pattern-color) 50%);
+                background-size: 25px 25px;
+            }
+
+            &-lg {
+                background-image: linear-gradient(90deg, transparent 50% 50%, var(--pattern-color) 50%);
+                background-size: 50px 50px;
+            }
+
+            &-xl {
+                background-image: linear-gradient(90deg, transparent 50%, var(--pattern-color) 50%);
+                background-size: 100px 100px;
+            }
+        }
+
+        &-triangles {
+            &-sm {
+                background-image: linear-gradient(45deg, var(--pattern-color) 50%, transparent 50%);
+                background-size: 10px 10px;
+            }
+
+            &-md {
+                background-image: linear-gradient(45deg, var(--pattern-color) 50%, transparent 50%);
+                background-size: 25px 25px;
+            }
+
+            &-lg {
+                background-image: linear-gradient(45deg, var(--pattern-color) 50%, transparent 50%);
+                background-size: 50px 50px;
+            }
+
+            &-xl {
+                background-image: linear-gradient(45deg, var(--pattern-color) 50%, transparent 50%);
+                background-size: 100px 100px;
+            }
+        }
+
+        &-zigzag {
+            &-sm {
+                background: linear-gradient(135deg, var(--pattern-color) 25%, transparent 25%) -10px 0, linear-gradient(225deg, var(--pattern-color) 25%, transparent 25%) -10px 0, linear-gradient(315deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%);
+                background-size: calc(2 * 10px) calc(2 * 10px);
+            }
+
+            &-md {
+                background: linear-gradient(135deg, var(--pattern-color) 25%, transparent 25%) -25px 0, linear-gradient(225deg, var(--pattern-color) 25%, transparent 25%) -25px 0, linear-gradient(315deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%);
+                background-size: calc(2 * 25px) calc(2 * 25px);
+            }
+
+            &-lg {
+                background: linear-gradient(135deg, var(--pattern-color) 25%, transparent 25%) -50px 0, linear-gradient(225deg, var(--pattern-color) 25%, transparent 25%) -50px 0, linear-gradient(315deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%);
+                background-size: calc(2 * 50px) calc(2 * 50px);
+            }
+
+            &-xl {
+                background: linear-gradient(135deg, var(--pattern-color) 25%, transparent 25%) -100px 0, linear-gradient(225deg, var(--pattern-color) 25%, transparent 25%) -100px 0, linear-gradient(315deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%);
+                background-size: calc(2 * 100px) calc(2 * 100px);
+            }
+        }
+
+        // pattern color
+        &-primary {
+            --pattern-color: var(--bs-primary)
+        }
+
+        &-secondary {
+            --pattern-color: var(--bs-secondary)
+        }
+
+        &-success {
+            --pattern-color: var(--bs-success)
+        }
+
+        &-warning {
+            --pattern-color: var(--bs-warning)
+        }
+
+        &-danger {
+            --pattern-color: var(--bs-danger)
+        }
+
+        &-info {
+            --pattern-color: var(--bs-info)
+        }
+
+        &-white {
+            --pattern-color: var(--bs-white)
+        }
+
+        &-black {
+            --pattern-color: var(--bs-black)
+        }
+
+        @each $key, $value in $pattern-opacity {
+            &-primary {
+                &-#{$key} {
+                    --pattern-color: rgba(var(--bs-primary-rgb), $alpha: $value) !important;
+                }
+            }
+
+            &-secondary {
+                &-#{$key} {
+                    --pattern-color: rgba(var(--bs-secondary-rgb), $alpha: $value) !important;
+                }
+            }
+
+            &-success {
+                &-#{$key} {
+                    --pattern-color:rgba(var(--bs-success-rgb), #{$value}) !important;
+                }
+            }
+
+            &-warning {
+                &-#{$key} {
+                    --pattern-color:rgba(var(--bs-warning-rgb), #{$value}) !important;
+                }
+            }
+
+            &-info {
+                &-#{$key} {
+                    --pattern-color:rgba(var(--bs-info-rgb), #{$value}) !important;
+                }
+            }
+
+            &-danger {
+                &-#{$key} {
+                    --pattern-color:rgba(var(--bs-danger-rgb), #{$value}) !important;
+                }
+            }
+
+            &-white {
+                &-#{$key} {
+                    --pattern-color:rgba(var(--bs-white-rgb), #{$value}) !important;
+                }
+            }
+
+            &-black {
+                &-#{$key} {
+                    --pattern-color:rgba(var(--bs-black-rgb), #{$value}) !important;
+                }
+            }
+        }
+    }
+
+    &-text-pattern {
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

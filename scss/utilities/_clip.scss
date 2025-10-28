@@ -1,0 +1,1479 @@
+
+
+//custom
+.al-custom{
+    &-clip{
+        &-one{
+            position: relative;
+            --al-ts:16px;
+            --al-te:16px;
+            --al-bs:16px;
+            --al-be:16px;
+
+            --al-t:40px;
+            --al-b:40px;
+            --al-s:16px;
+            --al-e:16px;
+            --al-extend-t:200px;
+            --al-extend-b:200px;
+            --al-extend-s:50%;
+            --al-extend-e:50%;
+            
+            clip-path: polygon(
+                0% calc(var(--al-ts) * 2), var(--al-ts) var(--al-ts), //ts 
+
+                calc(50% - calc(calc(var(--al-extend-t) + 100px) + var(--al-ts))) var(--al-ts), calc(50% - calc(var(--al-extend-t) + 100px)) 0%, 
+
+                calc(50% - var(--al-extend-t)) 0%, calc(50% - calc(var(--al-extend-t) - var(--al-t))) var(--al-t), 
+                calc(50% + calc(var(--al-extend-t) - var(--al-t))) var(--al-t), calc(50% + var(--al-extend-t)) 0%, 
+
+                calc(50% + calc(var(--al-extend-t) + 100px)) 0%, calc(50% + calc(calc(var(--al-extend-t) + 100px) + var(--al-te))) var(--al-te), 
+                
+                calc(100% - var(--al-te)) var(--al-te), 100% calc(var(--al-te) * 2), // te
+
+                100% calc(50% - calc(var(--al-extend-e) / 2)), calc(100% - var(--al-e)) calc(calc(50% - calc(var(--al-extend-e) / 2)) + var(--al-e)), 
+                calc(100% - var(--al-e)) calc(calc(50% + calc(var(--al-extend-e) / 2)) - var(--al-e)), 100% calc(50% + calc(var(--al-extend-e) / 2)), 
+
+                100% calc(100% - calc(var(--al-be) * 2)), calc(100% - var(--al-be)) calc(100% - var(--al-be)), //be 
+
+                calc(50% + calc(calc(var(--al-extend-b) + 100px) + var(--al-be))) calc(100% - var(--al-be)), calc(50% + calc(var(--al-extend-b) + 100px)) 100%, 
+
+                calc(50% + var(--al-extend-b)) 100%, calc(50% + calc(var(--al-extend-b) - var(--al-b))) calc(100% - var(--al-b)), 
+                calc(50% - calc(var(--al-extend-b) - var(--al-b))) calc(100% - var(--al-b)), calc(50% - var(--al-extend-b)) 100%, 
+
+                calc(50% - calc(var(--al-extend-b) + 100px)) 100%, calc(50% - calc(calc(var(--al-extend-b) + 100px) + var(--al-bs))) calc(100% - var(--al-bs)), 
+
+
+                var(--al-bs) calc(100% - var(--al-bs)), 0% calc(100% - calc(var(--al-bs) * 2)), //bs
+
+                0% calc(50% + calc(var(--al-extend-s) / 2)), var(--al-s) calc(calc(50% + calc(var(--al-extend-s) / 2)) - var(--al-s)), 
+                var(--al-s) calc(calc(50% - calc(var(--al-extend-s) / 2)) + var(--al-s)), 0% calc(50% - calc(var(--al-extend-s) / 2))
+            );
+        }
+    }
+
+    &-inlay{
+        &-one{
+            --al-inlay:5px;
+            --al-inlay-bg:currentColor;
+
+            &::before{
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                clip-path: polygon(
+                    calc(0% + var(--al-inlay)) calc(calc(var(--al-ts) * 2) + calc(var(--al-inlay) / 2)),  //ts 
+                    calc(var(--al-ts) + calc(var(--al-inlay) / 2)) calc(var(--al-ts) + var(--al-inlay)), //ts 
+
+                    calc(50% - calc(calc(var(--al-extend-t) + 100px) + calc(var(--al-ts) - calc(var(--al-inlay) / 2)))) calc(var(--al-ts) + var(--al-inlay)),  //ts-2
+                    calc(50% - calc(calc(var(--al-extend-t) + 100px) - calc(var(--al-inlay) / 2))) calc(0% + var(--al-inlay)),  //ts-2
+
+                    calc(calc(50% - var(--al-extend-t)) - calc(var(--al-inlay) / 2)) calc(0% + var(--al-inlay)), 
+                    calc(calc(50% - calc(var(--al-extend-t) - var(--al-t))) - calc(var(--al-inlay) / 2)) calc(var(--al-t) + var(--al-inlay)), 
+                    calc(calc(50% + calc(var(--al-extend-t) - var(--al-t))) + calc(var(--al-inlay) / 2)) calc(var(--al-t) + var(--al-inlay)), 
+                    calc( calc(50% + var(--al-extend-t)) + calc(var(--al-inlay) / 2)) calc(0% + var(--al-inlay)), 
+
+                    calc(calc(50% + calc(var(--al-extend-t) + 100px)) - calc(var(--al-inlay) / 2)) calc(0% + var(--al-inlay)),  // te-2
+                    calc(calc(50% + calc(calc(var(--al-extend-t) + 100px) + var(--al-te))) - calc(var(--al-inlay) / 2)) calc(var(--al-te) + var(--al-inlay)),  // te-2
+                    
+                    calc(calc(100% - calc(var(--al-inlay) / 2)) - var(--al-te)) calc(var(--al-te) + var(--al-inlay)),  // te
+                    calc(100% - var(--al-inlay)) calc(calc(var(--al-te) * 2) + calc(var(--al-inlay) / 2)), // te
+
+                    calc(100% - var(--al-inlay)) calc(calc(50% - calc(var(--al-extend-e) / 2)) - calc(var(--al-inlay) / 2)), 
+                    calc(calc(100% - var(--al-inlay)) - var(--al-e)) calc(calc(calc(50% - calc(var(--al-extend-e) / 2)) + var(--al-e)) - calc(var(--al-inlay) / 2)), 
+                    calc(calc(100% - var(--al-inlay)) - var(--al-e)) calc(calc(calc(50% + calc(var(--al-extend-e) / 2)) - var(--al-e)) + calc(var(--al-inlay) / 2)), 
+                    calc(100% - var(--al-inlay)) calc(calc(50% + calc(var(--al-extend-e) / 2)) + calc(var(--al-inlay) / 2)), 
+
+                    calc(100% - var(--al-inlay)) calc(calc(100% - calc(var(--al-inlay) / 2)) - calc(var(--al-be) * 2)),  //be 
+                    calc(calc(100% - calc(var(--al-inlay) / 2)) - var(--al-be)) calc(calc(100% - var(--al-inlay)) - var(--al-be)), //be 
+
+                    calc(calc(50% + calc(calc(var(--al-extend-b) + 100px) + var(--al-be))) - calc(var(--al-inlay) / 2)) calc(calc(100% - var(--al-inlay)) - var(--al-be)),   //be-2
+                    calc(calc(50% + calc(var(--al-extend-b) + 100px)) - calc(var(--al-inlay) / 2)) calc(100% - var(--al-inlay)),   //be-2
+
+                    calc(calc(50% + var(--al-extend-b)) + calc(var(--al-inlay) / 2)) calc(100% - var(--al-inlay)), 
+                    calc(calc(50% + calc(var(--al-extend-b) - var(--al-b))) + calc(var(--al-inlay) / 2)) calc(calc(100% - var(--al-inlay)) - var(--al-b)), 
+                    calc(calc(50% - calc(var(--al-extend-b) - var(--al-b))) - calc(var(--al-inlay) / 2)) calc(calc(100% - var(--al-inlay)) - var(--al-b)), 
+                    calc(calc(50% - var(--al-extend-b)) - calc(var(--al-inlay) / 2)) calc(100% - var(--al-inlay)), 
+
+                    calc(calc(50% - calc(var(--al-extend-b) + 100px)) + calc(var(--al-inlay) / 2)) calc(100% - var(--al-inlay)),   //bs-2
+                    calc(calc(50% - calc(calc(var(--al-extend-b) + 100px) + var(--al-bs))) + calc(var(--al-inlay) / 2)) calc(calc(100% - var(--al-inlay)) - var(--al-bs)),   //bs-2
+
+                    calc(var(--al-bs) + calc(var(--al-inlay) / 2)) calc(calc(100% - var(--al-inlay)) - var(--al-bs)),  //bs
+                    calc(0% + var(--al-inlay)) calc(calc(100% - calc(var(--al-inlay) / 2)) - calc(var(--al-bs) * 2)), //bs
+
+
+                    calc(0% + var(--al-inlay)) calc(calc(50% + calc(var(--al-extend-s) / 2)) + calc(var(--al-inlay) / 2)), 
+                    calc(var(--al-s) + var(--al-inlay)) calc(calc(calc(50% + calc(var(--al-extend-s) / 2)) - var(--al-s)) + calc(var(--al-inlay) / 2)), 
+                    calc(var(--al-s) + var(--al-inlay)) calc(calc(calc(50% - calc(var(--al-extend-s) / 2)) + var(--al-s)) - calc(var(--al-inlay) / 2)), 
+                    calc(0% + var(--al-inlay)) calc(calc(50% - calc(var(--al-extend-s) / 2)) - calc(var(--al-inlay) / 2))
+                );
+                pointer-events: none;
+                background: var(--al-inlay-bg);
+            }
+        }
+    }
+}
+
+//hexa
+.al{
+    &-hexa{
+        --al-inlay:3px;
+        --al-inlay-bg:currentColor;
+        --al-border:3px;
+        --al-border-bg:currentColor;
+        position: relative;
+        aspect-ratio: 1.1547 / 1;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        &-inlay{
+            &::before{
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: var(--al-inlay);
+                right: var(--al-inlay);
+                bottom: var(--al-inlay);
+                left: var(--al-inlay);
+                clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                background: var(--al-inlay-bg);
+            }
+        }
+        &-border{
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                clip-path: polygon(
+                    0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%,
+                    calc(25% + calc(var(--al-border) / 2)) calc(100% - var(--al-border)), 
+                    calc(75% - calc(var(--al-border) / 2)) calc(100% - var(--al-border)),
+                    calc(100% - var(--al-border)) 50%,
+                    calc(75% - calc(var(--al-border) / 2)) var(--al-border),
+                    calc(25% + calc(var(--al-border) / 2)) var(--al-border),
+                    var(--al-border) 50%,
+                    calc(25% + calc(var(--al-border) / 2)) calc(100% - var(--al-border)),
+                    25% 100%,
+                );
+                background: var(--al-border-bg);
+            }
+        }
+
+        &-alt{
+            --al-inlay:3px;
+            --al-inlay-bg:currentColor;
+            --al-border:3px;
+            --al-border-bg:currentColor;
+            position: relative;
+            aspect-ratio: 1 / 1.1547;
+            clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+            &-inlay{
+                &::before{
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: var(--al-inlay);
+                    right: var(--al-inlay);
+                    bottom: var(--al-inlay);
+                    left: var(--al-inlay);
+                    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+                    background: var(--al-inlay-bg);
+                }
+            }
+            &-border{
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                        50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%,
+                        var(--al-border) calc(25% + calc(var(--al-border) / 2)), 
+                        var(--al-border) calc(75% - calc(var(--al-border) / 2)), 
+                        50% calc(100% - var(--al-border)), 
+                        calc(100% - var(--al-border)) calc(75% - calc(var(--al-border) / 2)), 
+                        calc(100% - var(--al-border)) calc(25% + calc(var(--al-border) / 2)),  
+                        50% var(--al-border), 
+                        var(--al-border) calc(25% + calc(var(--al-border) / 2)), 
+                        0% 25%
+                    );
+
+                    background: var(--al-border-bg);
+                }
+            }
+        }
+    }
+}
+
+
+//triangle
+.al{
+    &-triangle{
+        &-up{
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        &-down{
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        }
+        &-start{
+            clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+        }
+        &-end{
+            clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+        }
+        &-inlay{
+            &-up{
+                position: relative;
+                --al-inlay-bg:currentColor;
+                --al-inlay:10px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                        50% calc(var(--al-inlay) + calc(var(--al-inlay) / 2)), 
+                       calc(var(--al-inlay) + calc(var(--al-inlay) / 2)) calc(100% - var(--al-inlay)), 
+                        calc(100% - calc(var(--al-inlay) + calc(var(--al-inlay) / 2))) calc(100% - var(--al-inlay))
+                    );
+                    background: var(--al-inlay-bg);
+                }
+            }
+            &-down{
+                position: relative;
+                --al-inlay-bg:currentColor;
+                --al-inlay:10px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                        calc(var(--al-inlay) + calc(var(--al-inlay) / 2)) var(--al-inlay), 
+                        calc(100% - calc(var(--al-inlay) + calc(var(--al-inlay) / 2))) var(--al-inlay), 
+                        50% calc(100% - calc(var(--al-inlay) + calc(var(--al-inlay) / 2)))
+                    );
+                    background: var(--al-inlay-bg);
+                }
+            }
+            &-start{
+                position: relative;
+                --al-inlay-bg:currentColor;
+                --al-inlay:10px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                       calc(var(--al-inlay) + calc(var(--al-inlay) / 2)) 50%, 
+                        calc(100% - var(--al-inlay)) calc(var(--al-inlay) + calc(var(--al-inlay) / 2)), 
+                        calc(100% - var(--al-inlay)) calc(100% - calc(var(--al-inlay) + calc(var(--al-inlay) / 2)))
+                    );
+                    background: var(--al-inlay-bg);
+                }
+            }
+            &-end{
+                position: relative;
+                --al-inlay-bg:currentColor;
+                --al-inlay:10px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                        var(--al-inlay) calc(var(--al-inlay) + calc(var(--al-inlay) / 2)), 
+                        calc(100% - calc(var(--al-inlay) + calc(var(--al-inlay) / 2))) 50%, 
+                        var(--al-inlay) calc(100% - calc(var(--al-inlay) + calc(var(--al-inlay) / 2)))
+                    );
+                    background: var(--al-inlay-bg);
+                }
+            }
+        }
+        &-border{
+            &-up{
+                position: relative;
+                --al-border-bg:currentColor;
+                --al-border:3px;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                        50% 0%, 100% 100%, 0% 100%, 
+                        calc(var(--al-border) + calc(var(--al-border) / 2)) calc(100% - var(--al-border)), calc(100% - calc(var(--al-border) + calc(var(--al-border) / 2))) calc(100% - var(--al-border)), 50% calc(var(--al-border) + calc(var(--al-border) / 2)), 
+                        calc(var(--al-border) + calc(var(--al-border) / 2)) calc(100% - var(--al-border)), 0% 100%
+                    );
+                    background: var(--al-border-bg);
+                }
+            }
+            &-down{
+                position: relative;
+                --al-border-bg:currentColor;
+                --al-border:3px;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                        0% 0%, 100% 0%, 50% 100%, 
+                        50% calc(100% - calc(var(--al-border) + calc(var(--al-border) / 2))), calc(100% - calc(var(--al-border) + calc(var(--al-border) / 2))) var(--al-border), calc(var(--al-border) + calc(var(--al-border) / 2)) var(--al-border), 50% calc(100% - calc(var(--al-border) + calc(var(--al-border) / 2))), 
+                        50% 100%
+                    );
+                    background: var(--al-border-bg);
+                }
+            }
+            &-start{
+                position: relative;
+                --al-border-bg:currentColor;
+                --al-border:3px;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                       100% 0, 100% 100%, 0% 50%, 
+                       calc(var(--al-border) + calc(var(--al-border) / 2)) 50%, 
+                       calc(100% - var(--al-border)) calc(100% - calc(var(--al-border) + calc(var(--al-border) / 2))), 
+                       calc(100% - var(--al-border)) calc(var(--al-border) + calc(var(--al-border) / 2)), 
+                       calc(var(--al-border) + calc(var(--al-border) / 2)) 50%, 
+                       0% 50%
+                    );
+                    background: var(--al-border-bg);
+                }
+            }
+            &-end{
+                position: relative;
+                --al-border-bg:currentColor;
+                --al-border:3px;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: polygon(
+                        0% 0%, 100% 50%, 0% 100%, 
+                        var(--al-border) calc(100% - calc(var(--al-border) + calc(var(--al-border) / 2))), 
+                        calc(100% - calc(var(--al-border) + calc(var(--al-border) / 2))) 50%, 
+                        var(--al-border) calc(var(--al-border) + calc(var(--al-border) / 2)), 
+                        var(--al-border) calc(100% - var(--al-border)), 
+                        0 100%
+                    );
+                    background: var(--al-border-bg);
+                }
+            }
+        }
+    }
+}
+
+.al{
+    //custom clip
+    
+    //rounded clip
+
+
+    // Clip center with border & inlay
+    &-clip-both{
+        position: relative;
+        --al-ts:0px;
+        --al-te:0px;
+        --al-be:0px;
+        --al-bs:0px;
+        --al-t:0px;
+        --al-e:0px;
+        --al-b:0px;
+        --al-s:0px;
+        --al-extend-t:0px;
+        --al-extend-e:0px;
+        --al-extend-b:0px;
+        --al-extend-s:0px;
+        --al-center-t:50%;
+        --al-center-e:50%;
+        --al-center-b:50%;
+        --al-center-s:50%;
+        --al-border:5px;
+        --al-border-bg:currentColor;
+        --al-inlay:8px;
+        --al-inlay-bg:currentColor;
+
+        clip-path: polygon(
+            0% var(--al-ts), var(--al-ts) 0%, /*1. ts*/
+
+            /*1.2 t*/
+            calc(var(--al-center-t) - var(--al-extend-t)) 0%, /*1.2.1 ts*/
+            calc(calc(var(--al-center-t) - var(--al-extend-t)) + var(--al-t)) var(--al-t), /*1.2.2 bs*/ 
+            calc(calc(var(--al-center-t) + var(--al-extend-t)) - var(--al-t)) var(--al-t),  /*1.2.3 be*/
+            calc(var(--al-center-t) + var(--al-extend-t)) 0%, /*1.2.4 te*/
+
+            calc(100% - var(--al-te)) 0%, 100% var(--al-te), /*2. te*/
+
+            /*2.1 r*/
+            100% calc(var(--al-center-e) - var(--al-extend-e)), /*2.1.1 te*/
+            calc(100% - var(--al-e)) calc(calc(var(--al-center-e) - var(--al-extend-e)) + var(--al-e)), /*2.1.2 ts*/
+            calc(100% - var(--al-e)) calc(calc(var(--al-center-e) + var(--al-extend-e)) - var(--al-e)), /*2.1.3 bs*/
+            100% calc(var(--al-center-e) + var(--al-extend-e)), /*2.1.4 be*/ 
+
+            100% calc(100% - var(--al-be)), calc(100% - var(--al-be)) 100%, /*3. be*/ 
+
+            /*3.1 b*/
+            calc(var(--al-center-b) + var(--al-extend-b)) 100%, /*3.2.1 be*/ 
+            calc(calc(var(--al-center-b) + var(--al-extend-b)) - var(--al-b)) calc(100% - var(--al-b)), /*3.2.2 te*/ 
+            calc(calc(var(--al-center-b) - var(--al-extend-b)) + var(--al-b)) calc(100% - var(--al-b)),   /*3.2.3 ts*/
+            calc(var(--al-center-b) - var(--al-extend-b)) 100%,  /*3.2.4 bs*/
+
+            var(--al-bs) 100%, 0 calc(100% - var(--al-bs)), /*4. bs*/ 
+
+            /*4.1 l*/
+            0% calc(var(--al-center-s) + var(--al-extend-s)), /*4.1.1 bs*/
+            var(--al-s) calc(calc(var(--al-center-s) + var(--al-extend-s)) - var(--al-s)), /*4.1.2 be*/
+            var(--al-s) calc(calc(var(--al-center-s) - var(--al-extend-s)) + var(--al-s)), /*4.1.3 te*/
+            0% calc(var(--al-center-s) - var(--al-extend-s)) /*4.1.4 ts*/
+        );
+
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: calc(var(--al-inlay) + var(--al-border));
+            right: calc(var(--al-inlay) + var(--al-border));
+            bottom: calc(var(--al-inlay) + var(--al-border));
+            left: calc(var(--al-inlay) + var(--al-border));
+            
+            clip-path: polygon(
+                /*1. ts*/ 
+                0% calc(var(--al-ts) - calc(var(--al-inlay) + var(--al-border)) / 2),
+                calc(var(--al-ts) - calc(var(--al-inlay) + var(--al-border)) / 2) 0%, 
+                
+                /*t*/
+                calc(var(--al-center-t) - calc(var(--al-extend-t) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) 0%, /*ts*/
+                calc(calc(var(--al-center-t) - calc(var(--al-extend-t) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) + var(--al-t)) var(--al-t), /*bs*/ 
+                calc(calc(var(--al-center-t) + calc(var(--al-extend-t) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) - var(--al-t)) var(--al-t),  /*be*/
+                calc(var(--al-center-t) + calc(var(--al-extend-t) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) 0%, /*te*/
+                
+                /*2. te*/ 
+                calc(100% - calc(var(--al-te) - calc(var(--al-inlay) + var(--al-border)) / 2)) 0%,
+                100% calc(var(--al-te) - calc(var(--al-inlay) + var(--al-border)) / 2), 
+
+                /*r*/
+                100% calc(var(--al-center-e) - calc(var(--al-extend-e) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))), /*te*/
+                calc(100% - var(--al-e)) calc(calc(var(--al-center-e) - calc(var(--al-extend-e) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) + var(--al-e)), /*ts*/
+                calc(100% - var(--al-e)) calc(calc(var(--al-center-e) + calc(var(--al-extend-e) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) - var(--al-e)), /*bs*/
+                100% calc(var(--al-center-e) + calc(var(--al-extend-e) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))), /*be*/ 
+
+                /*3. be*/ 
+                100% calc(100% - calc(var(--al-be) - calc(var(--al-inlay) + var(--al-border)) / 2)),
+                calc(100% - calc(var(--al-be) - calc(var(--al-inlay) + var(--al-border)) / 2)) 100%,
+
+                /*3.1 b*/
+                calc(var(--al-center-b) + calc(var(--al-extend-b) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) 100%, /*be*/ 
+                calc(calc(var(--al-center-b) + calc(var(--al-extend-b) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) - var(--al-b)) calc(100% - var(--al-b)), /*te*/ 
+                calc(calc(var(--al-center-b) - calc(var(--al-extend-b) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) + var(--al-b)) calc(100% - var(--al-b)),   /*ts*/
+                calc(var(--al-center-b) - calc(var(--al-extend-b) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) 100%,  /*bs*/
+                
+                /*4. bs*/ 
+                calc(var(--al-bs) - calc(var(--al-inlay) + var(--al-border)) / 2) 100%, 
+                0% calc(100% - calc(var(--al-bs) - calc(var(--al-inlay) + var(--al-border)) / 2)), 
+
+                /*l*/
+                0% calc(var(--al-center-s) + calc(var(--al-extend-s) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))), /*bs*/
+                var(--al-s) calc(calc(var(--al-center-s) + calc(var(--al-extend-s) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) - var(--al-s)), /*be*/
+                var(--al-s) calc(calc(var(--al-center-s) - calc(var(--al-extend-s) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) + var(--al-s)), /*te*/
+                0% calc(var(--al-center-s) - calc(var(--al-extend-s) + calc(var(--al-border) / 2) + calc(var(--al-inlay) / 2))) /*ts*/
+            );
+            
+            background: var(--al-inlay-bg);
+            pointer-events: none;
+        }
+        
+        &::after{
+            content: "";
+            position: absolute;
+            top: -0.5px;
+            right: -0.5px;
+            bottom: -0.5px;
+            left: -0.5px;
+            clip-path: polygon(
+                0% 0%, /*1. outer ts*/ 
+                100% 0%, /*2. outer te*/ 
+                100% 100%, /*3. outer be*/
+                0% 100%, /*4. outer bs*/
+
+                0% 18%, /*5. outer enter point ts*/
+                var(--al-border) 18%, /*6. inner enter point te*/ 
+                
+                /*inner l*/
+                var(--al-border) calc(var(--al-center-s) - calc(var(--al-extend-s) + var(--al-border) / 2)), /*ts*/
+                calc(var(--al-border) + var(--al-s)) calc(var(--al-center-s) - calc(calc(var(--al-extend-s) + var(--al-border) / 2) - var(--al-s))), /*te*/
+                calc(var(--al-border) + var(--al-s)) calc(var(--al-center-s) + calc(calc(var(--al-extend-s) + var(--al-border) / 2) - var(--al-s))), /*be*/
+                var(--al-border) calc(var(--al-center-s) + calc(var(--al-extend-s) + var(--al-border) / 2)), /*bs*/
+
+                /*4.1 inner bs*/
+                var(--al-border) calc(100% - calc(var(--al-bs) + var(--al-border) / 2)),
+                calc(var(--al-bs) + var(--al-border) / 2) calc(100% - var(--al-border)),
+                
+                /*inner b*/
+                calc(var(--al-center-b) - calc(var(--al-extend-b) + var(--al-border) / 2)) calc(100% - var(--al-border)), /*bs*/
+                calc(var(--al-center-b) - calc(calc(var(--al-extend-b) + var(--al-border) / 2) - var(--al-b))) calc(100% - calc(var(--al-border) + var(--al-b))), /*ts*/
+                calc(var(--al-center-b) + calc(calc(var(--al-extend-b) + var(--al-border) / 2) - var(--al-b))) calc(100% - calc(var(--al-border) + var(--al-b))), /*te*/
+                calc(var(--al-center-b) + calc(var(--al-extend-b) + var(--al-border) / 2)) calc(100% - var(--al-border)), /*be*/
+                
+                /*3.1 inner be*/
+                calc(100% - calc(var(--al-be) + var(--al-border) / 2)) calc(100% - var(--al-border)),
+                calc(100% - var(--al-border)) calc(100% - calc(var(--al-be) + var(--al-border) / 2)),
+                
+                /*inner r*/
+                calc(100% - var(--al-border)) calc(var(--al-center-e) + calc(var(--al-extend-e) + var(--al-border) / 2)), /*be*/
+                calc(100% - calc(var(--al-border) + var(--al-e))) calc(var(--al-center-e) + calc(calc(var(--al-extend-e) + var(--al-border) / 2) - var(--al-e))), /*bs*/
+                calc(100% - calc(var(--al-border) + var(--al-e))) calc(var(--al-center-e) - calc(calc(var(--al-extend-e) + var(--al-border) / 2) - var(--al-e))), /*ts*/
+                calc(100% - var(--al-border)) calc(var(--al-center-e) - calc(var(--al-extend-e) + var(--al-border) / 2)), /*te*/
+                
+                /*2.1 inner te*/
+                calc(100% - var(--al-border)) calc(var(--al-te) + var(--al-border) / 2),
+                calc(100% - calc(var(--al-te) + var(--al-border) / 2)) var(--al-border),
+                
+                /*inner t*/
+                calc(var(--al-center-t) + calc(var(--al-extend-t) + var(--al-border) / 2)) var(--al-border), /*te*/
+                calc(var(--al-center-t) + calc(calc(var(--al-extend-t) + var(--al-border) / 2) - var(--al-t))) calc(var(--al-border) + var(--al-t)), /*be*/
+                calc(var(--al-center-t) - calc(calc(var(--al-extend-t) + var(--al-border) / 2) - var(--al-t))) calc(var(--al-border) + var(--al-t)), /*bs*/
+                calc(var(--al-center-t) - calc(var(--al-extend-t) + var(--al-border) / 2)) var(--al-border), /*ts*/
+                
+                /*1.1 inner ts*/
+                calc(var(--al-ts) + var(--al-border) / 2) var(--al-border),
+                var(--al-border) calc(var(--al-ts) + var(--al-border) / 2),
+                
+                var(--al-border) 18%, /*7. inner exit point te*/ 
+                0% 18% /*8. outer exit point te*/
+            );
+            background: var(--al-border-bg);
+            pointer-events: none;
+        }
+    }
+    
+    // Clip center with border
+    &-clip-border{
+        position: relative;
+        --al-ts:0px;
+        --al-te:0px;
+        --al-be:0px;
+        --al-bs:0px;
+        --al-t:0px;
+        --al-e:0px;
+        --al-b:0px;
+        --al-s:0px;
+        --al-extend-t:0px;
+        --al-extend-e:0px;
+        --al-extend-b:0px;
+        --al-extend-s:0px;
+        --al-center-t:50%;
+        --al-center-e:50%;
+        --al-center-b:50%;
+        --al-center-s:50%;
+        --al-border:5px;
+        --al-border-bg:currentColor;
+    // --al-border-bg:var(--bs-white);
+
+        clip-path: polygon(
+            0% var(--al-ts), var(--al-ts) 0%, /*1. ts*/
+
+            /*1.2 t*/
+            calc(var(--al-center-t) - var(--al-extend-t)) 0%, /*1.2.1 ts*/
+            calc(calc(var(--al-center-t) - var(--al-extend-t)) + var(--al-t)) var(--al-t), /*1.2.2 bs*/ 
+            calc(calc(var(--al-center-t) + var(--al-extend-t)) - var(--al-t)) var(--al-t),  /*1.2.3 be*/
+            calc(var(--al-center-t) + var(--al-extend-t)) 0%, /*1.2.4 te*/
+
+            calc(100% - var(--al-te)) 0%, 100% var(--al-te), /*2. te*/
+
+            /*2.1 r*/
+            100% calc(var(--al-center-e) - var(--al-extend-e)), /*2.1.1 te*/
+            calc(100% - var(--al-e)) calc(calc(var(--al-center-e) - var(--al-extend-e)) + var(--al-e)), /*2.1.2 ts*/
+            calc(100% - var(--al-e)) calc(calc(var(--al-center-e) + var(--al-extend-e)) - var(--al-e)), /*2.1.3 bs*/
+            100% calc(var(--al-center-e) + var(--al-extend-e)), /*2.1.4 be*/ 
+
+            100% calc(100% - var(--al-be)), calc(100% - var(--al-be)) 100%, /*3. be*/ 
+
+            /*3.1 b*/
+            calc(var(--al-center-b) + var(--al-extend-b)) 100%, /*3.2.1 be*/ 
+            calc(calc(var(--al-center-b) + var(--al-extend-b)) - var(--al-b)) calc(100% - var(--al-b)), /*3.2.2 te*/ 
+            calc(calc(var(--al-center-b) - var(--al-extend-b)) + var(--al-b)) calc(100% - var(--al-b)),   /*3.2.3 ts*/
+            calc(var(--al-center-b) - var(--al-extend-b)) 100%,  /*3.2.4 bs*/
+
+            var(--al-bs) 100%, 0 calc(100% - var(--al-bs)), /*4. bs*/ 
+
+            /*4.1 l*/
+            0% calc(var(--al-center-s) + var(--al-extend-s)), /*4.1.1 bs*/
+            var(--al-s) calc(calc(var(--al-center-s) + var(--al-extend-s)) - var(--al-s)), /*4.1.2 be*/
+            var(--al-s) calc(calc(var(--al-center-s) - var(--al-extend-s)) + var(--al-s)), /*4.1.3 te*/
+            0% calc(var(--al-center-s) - var(--al-extend-s)) /*4.1.4 ts*/
+        );
+        
+        &::after{
+            content: "";
+            position: absolute;
+            top: -0.5px;
+            right: -0.5px;
+            bottom: -0.5px;
+            left: -0.5px;
+            clip-path: polygon(
+                0% 0%, /*1. outer ts*/ 
+                100% 0%, /*2. outer te*/ 
+                100% 100%, /*3. outer be*/
+                0% 100%, /*4. outer bs*/
+
+                0% 18%, /*5. outer enter point ts*/
+                var(--al-border) 18%, /*6. inner enter point te*/ 
+                
+                /*inner l*/
+                var(--al-border) calc(var(--al-center-s) - calc(var(--al-extend-s) + var(--al-border) / 2)), /*ts*/
+                calc(var(--al-border) + var(--al-s)) calc(var(--al-center-s) - calc(calc(var(--al-extend-s) + var(--al-border) / 2) - var(--al-s))), /*te*/
+                calc(var(--al-border) + var(--al-s)) calc(var(--al-center-s) + calc(calc(var(--al-extend-s) + var(--al-border) / 2) - var(--al-s))), /*be*/
+                var(--al-border) calc(var(--al-center-s) + calc(var(--al-extend-s) + var(--al-border) / 2)), /*bs*/
+
+                /*4.1 inner bs*/
+                var(--al-border) calc(100% - calc(var(--al-bs) + var(--al-border) / 2)),
+                calc(var(--al-bs) + var(--al-border) / 2) calc(100% - var(--al-border)),
+                
+                /*inner b*/
+                calc(var(--al-center-b) - calc(var(--al-extend-b) + var(--al-border) / 2)) calc(100% - var(--al-border)), /*bs*/
+                calc(var(--al-center-b) - calc(calc(var(--al-extend-b) + var(--al-border) / 2) - var(--al-b))) calc(100% - calc(var(--al-border) + var(--al-b))), /*ts*/
+                calc(var(--al-center-b) + calc(calc(var(--al-extend-b) + var(--al-border) / 2) - var(--al-b))) calc(100% - calc(var(--al-border) + var(--al-b))), /*te*/
+                calc(var(--al-center-b) + calc(var(--al-extend-b) + var(--al-border) / 2)) calc(100% - var(--al-border)), /*be*/
+                
+                /*3.1 inner be*/
+                calc(100% - calc(var(--al-be) + var(--al-border) / 2)) calc(100% - var(--al-border)),
+                calc(100% - var(--al-border)) calc(100% - calc(var(--al-be) + var(--al-border) / 2)),
+                
+                /*inner r*/
+                calc(100% - var(--al-border)) calc(var(--al-center-e) + calc(var(--al-extend-e) + var(--al-border) / 2)), /*be*/
+                calc(100% - calc(var(--al-border) + var(--al-e))) calc(var(--al-center-e) + calc(calc(var(--al-extend-e) + var(--al-border) / 2) - var(--al-e))), /*bs*/
+                calc(100% - calc(var(--al-border) + var(--al-e))) calc(var(--al-center-e) - calc(calc(var(--al-extend-e) + var(--al-border) / 2) - var(--al-e))), /*ts*/
+                calc(100% - var(--al-border)) calc(var(--al-center-e) - calc(var(--al-extend-e) + var(--al-border) / 2)), /*te*/
+                
+                /*2.1 inner te*/
+                calc(100% - var(--al-border)) calc(var(--al-te) + var(--al-border) / 2),
+                calc(100% - calc(var(--al-te) + var(--al-border) / 2)) var(--al-border),
+                
+                /*inner t*/
+                calc(var(--al-center-t) + calc(var(--al-extend-t) + var(--al-border) / 2)) var(--al-border), /*te*/
+                calc(var(--al-center-t) + calc(calc(var(--al-extend-t) + var(--al-border) / 2) - var(--al-t))) calc(var(--al-border) + var(--al-t)), /*be*/
+                calc(var(--al-center-t) - calc(calc(var(--al-extend-t) + var(--al-border) / 2) - var(--al-t))) calc(var(--al-border) + var(--al-t)), /*bs*/
+                calc(var(--al-center-t) - calc(var(--al-extend-t) + var(--al-border) / 2)) var(--al-border), /*ts*/
+                
+                /*1.1 inner ts*/
+                calc(var(--al-ts) + var(--al-border) / 2) var(--al-border),
+                var(--al-border) calc(var(--al-ts) + var(--al-border) / 2),
+                
+                var(--al-border) 18%, /*7. inner exit point te*/ 
+                0% 18% /*8. outer exit point te*/
+            );
+            background-color: var(--al-border-bg);
+            pointer-events: none;
+        }
+    }
+
+    // Clip center with inlay
+    &-clip-inlay{
+        position: relative;
+        --al-ts:0px;
+        --al-te:0px;
+        --al-be:0px;
+        --al-bs:0px;
+        --al-t:0px;
+        --al-e:0px;
+        --al-b:0px;
+        --al-s:0px;
+        --al-extend-t:0px;
+        --al-extend-e:0px;
+        --al-extend-b:0px;
+        --al-extend-s:0px;
+        --al-center-t:50%;
+        --al-center-e:50%;
+        --al-center-b:50%;
+        --al-center-s:50%;
+        --al-inlay:8px;
+        --al-inlay-bg:currentColor;
+
+        clip-path: polygon(
+            0% var(--al-ts), var(--al-ts) 0%, /*1. ts*/
+
+            /*1.2 t*/
+            calc(var(--al-center-t) - var(--al-extend-t)) 0%, /*1.2.1 ts*/
+            calc(calc(var(--al-center-t) - var(--al-extend-t)) + var(--al-t)) var(--al-t), /*1.2.2 bs*/ 
+            calc(calc(var(--al-center-t) + var(--al-extend-t)) - var(--al-t)) var(--al-t),  /*1.2.3 be*/
+            calc(var(--al-center-t) + var(--al-extend-t)) 0%, /*1.2.4 te*/
+
+            calc(100% - var(--al-te)) 0%, 100% var(--al-te), /*2. te*/
+
+            /*2.1 r*/
+            100% calc(var(--al-center-e) - var(--al-extend-e)), /*2.1.1 te*/
+            calc(100% - var(--al-e)) calc(calc(var(--al-center-e) - var(--al-extend-e)) + var(--al-e)), /*2.1.2 ts*/
+            calc(100% - var(--al-e)) calc(calc(var(--al-center-e) + var(--al-extend-e)) - var(--al-e)), /*2.1.3 bs*/
+            100% calc(var(--al-center-e) + var(--al-extend-e)), /*2.1.4 be*/ 
+
+            100% calc(100% - var(--al-be)), calc(100% - var(--al-be)) 100%, /*3. be*/ 
+
+            /*3.1 b*/
+            calc(var(--al-center-b) + var(--al-extend-b)) 100%, /*3.2.1 be*/ 
+            calc(calc(var(--al-center-b) + var(--al-extend-b)) - var(--al-b)) calc(100% - var(--al-b)), /*3.2.2 te*/ 
+            calc(calc(var(--al-center-b) - var(--al-extend-b)) + var(--al-b)) calc(100% - var(--al-b)),   /*3.2.3 ts*/
+            calc(var(--al-center-b) - var(--al-extend-b)) 100%,  /*3.2.4 bs*/
+
+            var(--al-bs) 100%, 0 calc(100% - var(--al-bs)), /*4. bs*/ 
+
+            /*4.1 l*/
+            0% calc(var(--al-center-s) + var(--al-extend-s)), /*4.1.1 bs*/
+            var(--al-s) calc(calc(var(--al-center-s) + var(--al-extend-s)) - var(--al-s)), /*4.1.2 be*/
+            var(--al-s) calc(calc(var(--al-center-s) - var(--al-extend-s)) + var(--al-s)), /*4.1.3 te*/
+            0% calc(var(--al-center-s) - var(--al-extend-s)) /*4.1.4 ts*/
+        );
+
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: var(--al-inlay);
+            right: var(--al-inlay);
+            bottom: var(--al-inlay);
+            left: var(--al-inlay);
+            
+            clip-path: polygon(
+                /*1. ts*/ 
+                0% calc(var(--al-ts) - var(--al-inlay) / 2),
+                calc(var(--al-ts) - var(--al-inlay) / 2) 0%, 
+                
+                /*t*/
+                calc(var(--al-center-t) - calc(var(--al-extend-t) + calc(var(--al-inlay) / 2))) 0%, /*ts*/
+                calc(calc(var(--al-center-t) - calc(var(--al-extend-t) + calc(var(--al-inlay) / 2))) + var(--al-t)) var(--al-t), /*bs*/ 
+                calc(calc(var(--al-center-t) + calc(var(--al-extend-t) + calc(var(--al-inlay) / 2))) - var(--al-t)) var(--al-t),  /*be*/
+                calc(var(--al-center-t) + calc(var(--al-extend-t) + calc(var(--al-inlay) / 2))) 0%, /*te*/
+                
+                /*2. te*/ 
+                calc(100% - calc(var(--al-te) - var(--al-inlay) / 2)) 0%,
+                100% calc(var(--al-te) - var(--al-inlay) / 2), 
+
+                /*r*/
+                100% calc(var(--al-center-e) - calc(var(--al-extend-e) + calc(var(--al-inlay) / 2))), /*te*/
+                calc(100% - var(--al-e)) calc(calc(var(--al-center-e) - calc(var(--al-extend-e) + calc(var(--al-inlay) / 2))) + var(--al-e)), /*ts*/
+                calc(100% - var(--al-e)) calc(calc(var(--al-center-e) + calc(var(--al-extend-e) + calc(var(--al-inlay) / 2))) - var(--al-e)), /*bs*/
+                100% calc(var(--al-center-e) + calc(var(--al-extend-e) + calc(var(--al-inlay) / 2))), /*be*/ 
+
+                /*3. be*/ 
+                100% calc(100% - calc(var(--al-be) - var(--al-inlay) / 2)),
+                calc(100% - calc(var(--al-be) - var(--al-inlay) / 2)) 100%,
+
+                /*3.1 b*/
+                calc(var(--al-center-b) + calc(var(--al-extend-b) + calc(var(--al-inlay) / 2))) 100%, /*be*/ 
+                calc(calc(var(--al-center-b) + calc(var(--al-extend-b) + calc(var(--al-inlay) / 2))) - var(--al-b)) calc(100% - var(--al-b)), /*te*/ 
+                calc(calc(var(--al-center-b) - calc(var(--al-extend-b) + calc(var(--al-inlay) / 2))) + var(--al-b)) calc(100% - var(--al-b)),   /*ts*/
+                calc(var(--al-center-b) - calc(var(--al-extend-b) + calc(var(--al-inlay) / 2))) 100%,  /*bs*/
+                
+                /*4. bs*/ 
+                calc(var(--al-bs) - var(--al-inlay) / 2) 100%, 
+                0% calc(100% - calc(var(--al-bs) - var(--al-inlay) / 2)), 
+
+                /*l*/
+                0% calc(var(--al-center-s) + calc(var(--al-extend-s) + calc(var(--al-inlay) / 2))), /*bs*/
+                var(--al-s) calc(calc(var(--al-center-s) + calc(var(--al-extend-s) + calc(var(--al-inlay) / 2))) - var(--al-s)), /*be*/
+                var(--al-s) calc(calc(var(--al-center-s) - calc(var(--al-extend-s) + calc(var(--al-inlay) / 2))) + var(--al-s)), /*te*/
+                0% calc(var(--al-center-s) - calc(var(--al-extend-s) + calc(var(--al-inlay) / 2))) /*ts*/
+            );
+            
+            background: var(--al-inlay-bg);
+            pointer-events: none;
+        }
+    }
+
+    // Clip with center
+    &-clip{
+        position: relative;
+        --al-ts:0px;
+        --al-te:0px;
+        --al-be:0px;
+        --al-bs:0px;
+        --al-t:0px;
+        --al-e:0px;
+        --al-b:0px;
+        --al-s:0px;
+        --al-extend-t:0px;
+        --al-extend-e:0px;
+        --al-extend-b:0px;
+        --al-extend-s:0px;
+        --al-center-t:50%;
+        --al-center-e:50%;
+        --al-center-b:50%;
+        --al-center-s:50%;
+
+        clip-path: polygon(
+            0% var(--al-ts), var(--al-ts) 0%, /*1. ts*/
+
+            /*t*/
+            calc(var(--al-center-t) - var(--al-extend-t)) 0%, /*ts*/
+            calc(calc(var(--al-center-t) - var(--al-extend-t)) + var(--al-t)) var(--al-t), /*bs*/ 
+            calc(calc(var(--al-center-t) + var(--al-extend-t)) - var(--al-t)) var(--al-t),  /*be*/
+            calc(var(--al-center-t) + var(--al-extend-t)) 0%, /*te*/
+
+            calc(100% - var(--al-te)) 0%, 100% var(--al-te), /*2. te*/
+
+            /*r*/
+            100% calc(var(--al-center-e) - var(--al-extend-e)), /*te*/
+            calc(100% - var(--al-e)) calc(calc(var(--al-center-e) - var(--al-extend-e)) + var(--al-e)), /*ts*/
+            calc(100% - var(--al-e)) calc(calc(var(--al-center-e) + var(--al-extend-e)) - var(--al-e)), /*bs*/
+            100% calc(var(--al-center-e) + var(--al-extend-e)), /*be*/ 
+
+            100% calc(100% - var(--al-be)), calc(100% - var(--al-be)) 100%, /*3. be*/ 
+
+            /*b*/
+            calc(var(--al-center-b) + var(--al-extend-b)) 100%, /*be*/ 
+            calc(calc(var(--al-center-b) + var(--al-extend-b)) - var(--al-b)) calc(100% - var(--al-b)), /*te*/ 
+            calc(calc(var(--al-center-b) - var(--al-extend-b)) + var(--al-b)) calc(100% - var(--al-b)),   /*ts*/
+            calc(var(--al-center-b) - var(--al-extend-b)) 100%,  /*bs*/
+
+            var(--al-bs) 100%, 0 calc(100% - var(--al-bs)), /*4. bs*/ 
+
+            /*l*/
+            0% calc(var(--al-center-s) + var(--al-extend-s)), /*bs*/
+            var(--al-s) calc(calc(var(--al-center-s) + var(--al-extend-s)) - var(--al-s)), /*be*/
+            var(--al-s) calc(calc(var(--al-center-s) - var(--al-extend-s)) + var(--al-s)), /*te*/
+            0% calc(var(--al-center-s) - var(--al-extend-s)) /*ts*/
+        );
+    }
+
+    // Clip with Border & inlay
+    &-both{
+        position: relative;
+        --al-border:5px;
+        --al-border-bg:currentColor;
+        --al-inlay:8px;
+        --al-inlay-bg:currentColor;
+        clip-path: polygon(
+            0% 0%, 
+            100% 0%,
+            100% 100%, 
+            0% 100%
+        );
+
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: calc(var(--al-inlay) + var(--al-border));
+            right: calc(var(--al-inlay) + var(--al-border));
+            bottom: calc(var(--al-inlay) + var(--al-border));
+            left: calc(var(--al-inlay) + var(--al-border));
+            clip-path: polygon(
+                /*ts*/ 
+                0% calc(var(--al-ts) - calc(var(--al-inlay) + var(--al-border)) / 2),
+                calc(var(--al-ts) - calc(var(--al-inlay) + var(--al-border)) / 2) 0%,
+
+                /*te*/ 
+                calc(100% - calc(var(--al-te) - calc(var(--al-inlay) + var(--al-border)) / 2)) 0%,
+                100% calc(var(--al-te) - calc(var(--al-inlay) + var(--al-border)) / 2),
+
+                /*be*/ 
+                100% calc(100% - calc(var(--al-be) - calc(var(--al-inlay) + var(--al-border)) / 2)),
+                calc(100% - calc(var(--al-be) - calc(var(--al-inlay) + var(--al-border)) / 2)) 100%,
+
+                /*bs*/ 
+                calc(var(--al-bs) - calc(var(--al-inlay) + var(--al-border)) / 2) 100%,
+                0% calc(100% - calc(var(--al-bs) - calc(var(--al-inlay) + var(--al-border)) / 2)),
+            );
+            
+            background: var(--al-inlay-bg);
+            pointer-events: none;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: -0.5px;
+            right: -0.5px;
+            bottom: -0.5px;
+            left: 0;
+            clip-path: polygon(
+                0% 0%, /*1. outer ts*/
+                100% 0%,  /*2. outer te*/
+                100% 100%, /*3. outer be*/
+                0% 100%, /*4. outer bs*/
+                0% 0%,  /*5. outer ts*/
+
+                var(--al-border) calc(var(--al-ts) + var(--al-border) / 2), /*1. inner ts */
+
+                var(--al-border) calc(100% - calc(var(--al-bs) + var(--al-border) / 2)), /*2. inner bs */
+                calc(var(--al-bs) + var(--al-border) / 2) calc(100% - var(--al-border)), /*2.1 inner bs */
+
+                calc(100% - calc(var(--al-be) + var(--al-border) / 2)) calc(100% - var(--al-border)), /*3. inner be */ 
+                calc(100% - var(--al-border)) calc(100% - calc(var(--al-be) + var(--al-border) / 2)), /*3.1 inner be */ 
+
+                calc(100% - var(--al-border)) calc(var(--al-te) + var(--al-border) / 2), /*4. inner te */ 
+                calc(100% - calc(var(--al-te) + var(--al-border) / 2)) var(--al-border), /*4.1 inner te */ 
+
+                calc(var(--al-ts) + var(--al-border) / 2) var(--al-border), /*5. inner ts */ 
+                var(--al-border) calc(var(--al-ts) + var(--al-border) / 2), /*1.1 inner ts */ 
+            );
+            background: var(--al-border-bg);
+            pointer-events: none;
+        }
+    }
+
+    // Clip Corner with Border
+    &-border{
+        position: relative;
+        --al-border:5px;
+        --al-border-bg:currentColor;
+        &::after{
+            content: "";
+            position: absolute;
+            top: -0.25px;
+            right: -0.25px;
+            bottom: -0.25px;
+            left: -0.25px;
+            clip-path: polygon(
+                0% 0%, /*1. outer ts*/
+                100% 0%,  /*2. outer te*/
+                100% 100%, /*3. outer be*/
+                0% 100%, /*4. outer bs*/
+                0% 0%,  /*5. outer ts*/
+
+                var(--al-border) calc(var(--al-ts) + var(--al-border) / 2), /*1. inner ts */
+
+                var(--al-border) calc(100% - calc(var(--al-bs) + var(--al-border) / 2)), /*2. inner bs */
+                calc(var(--al-bs) + var(--al-border) / 2) calc(100% - var(--al-border)), /*2.1 inner bs */
+
+                calc(100% - calc(var(--al-be) + var(--al-border) / 2)) calc(100% - var(--al-border)), /*3. inner be */ 
+                calc(100% - var(--al-border)) calc(100% - calc(var(--al-be) + var(--al-border) / 2)), /*3.1 inner be */ 
+
+                calc(100% - var(--al-border)) calc(var(--al-te) + var(--al-border) / 2), /*4. inner te */ 
+                calc(100% - calc(var(--al-te) + var(--al-border) / 2)) var(--al-border), /*4.1 inner te */ 
+
+                calc(var(--al-ts) + var(--al-border) / 2) var(--al-border), /*5. inner ts */ 
+                var(--al-border) calc(var(--al-ts) + var(--al-border) / 2), /*1.1 inner ts */ 
+            );
+            background: var(--al-border-bg);
+            pointer-events: none;
+        }
+    }
+
+    // Clip Corner with Inlay
+    &-inlay{
+        position: relative;    
+        --al-inlay:8px;
+        --al-inlay-bg:currentColor;
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: var(--al-inlay);
+            right: var(--al-inlay);
+            bottom: var(--al-inlay);
+            left: var(--al-inlay);
+            clip-path: polygon(
+                /*ts*/
+                0% calc(var(--al-ts) - var(--al-inlay) / 2),
+                calc(var(--al-ts) - var(--al-inlay) / 2) 0%,
+                
+                /*te*/
+                calc(100% - calc(var(--al-te) - var(--al-inlay) / 2)) 0%,
+                100% calc(var(--al-te) - var(--al-inlay) / 2),
+        
+                /*be*/
+                100% calc(100% - calc(var(--al-be) - var(--al-inlay) / 2)),
+                calc(100% - calc(var(--al-be) - var(--al-inlay) / 2)) 100%,
+        
+                /*bs*/
+                calc(var(--al-bs) - var(--al-inlay) / 2) 100%,
+                0% calc(100% - calc(var(--al-bs) - var(--al-inlay) / 2)),
+            );
+            background: var(--al-inlay-bg);
+            pointer-events: none;
+        }
+    }
+
+    // corner start
+    &-corner{
+        position: relative;
+        --al-ts:0px;
+        --al-te:0px;
+        --al-be:0px;
+        --al-bs:0px;
+        clip-path: polygon(
+            var(--al-ts) 0%, 
+            calc(100% - var(--al-te)) 0%, 100% var(--al-te), 
+            100% calc(100% - var(--al-be)), calc(100% - var(--al-be)) 100%, 
+            var(--al-bs) 100%, 0% calc(100% - var(--al-bs)), 
+            0% var(--al-ts)
+        ) !important;
+    }
+
+    // Default sizing 
+    &-all-clip{
+        --al-extend-t:50px !important;
+        --al-extend-e:50px !important;
+        --al-extend-b:50px !important;
+        --al-extend-s:50px !important;
+        --al-t:16px !important;
+        --al-e:16px !important;
+        --al-b:16px !important;
+        --al-s:16px !important;
+    }
+    &-t-clip-x{
+        --al-extend-t:50px !important;
+        --al-t:16px !important;
+    }
+    &-b-clip-x{
+        --al-extend-b:50px !important;
+        --al-b:16px !important;
+    }
+
+    //ts, te, be, bs
+    &-corner-all{
+        --al-ts:16px !important;
+        --al-te:16px !important;
+        --al-be:16px !important;
+        --al-bs:16px !important;
+    }
+
+    // clip size
+    $clip-sizes: (0:0, 1:1, 2:2, 3:3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 16: 16, 20: 20, 24: 24, 25: 25, 26: 26,  28: 28,  30: 30, 32: 32, 34: 34, 48: 48, 50: 50, 64: 64, 75: 75, 80: 80, 96: 96, 112: 112 );
+    @each $key, $value in $clip-sizes {
+        // &-all-#{$key}{
+        //     --al-ts: #{$value}px;
+        //     --al-te: #{$value}px;
+        //     --al-be: #{$value}px;
+        //     --al-bs: #{$value}px;
+        // }
+        &-corner-all-#{$key}{
+            --al-ts: #{$value}px !important;
+            --al-te: #{$value}px !important;
+            --al-be: #{$value}px !important;
+            --al-bs: #{$value}px !important;
+        }
+        &-all-#{$key}{
+            --al-t: #{$value}px !important;
+            --al-e: #{$value}px !important;
+            --al-b: #{$value}px !important;
+            --al-s: #{$value}px !important;
+        }
+        &-y-#{$key}{
+            --al-t: #{$value}px !important;
+            --al-b: #{$value}px !important;
+        }
+        &-x-#{$key}{
+            --al-e: #{$value}px !important;
+            --al-s: #{$value}px !important;
+        }
+
+        //Bee Border
+        &-border-#{$key}{
+            --al-border: #{$value}px !important;
+        }
+
+        //Bee Inlay
+        &-inlay-#{$key}{
+            --al-inlay: #{$value}px !important;
+        }
+    }
+
+    // Bee extend PX
+    $clip-extend-sizes: (0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 15: 15, 16: 16, 20: 20, 25: 25, 30: 30, 35: 35, 40: 40, 45: 45, 50: 50, 55: 55, 60: 60, 65: 65, 70: 70, 75: 75, 80: 80, 85: 85, 90: 90, 95: 95, 100: 100, 120: 120, 150: 150, 200: 200, 250: 250);
+    @each $key, $value in $clip-extend-sizes {
+        &-extend-all-#{$key}{
+            --al-extend-t: #{$value}px !important;
+            --al-extend-e: #{$value}px !important;
+            --al-extend-b: #{$value}px !important;
+            --al-extend-s: #{$value}px !important;
+        }
+        &-extend{
+            &-y-#{$key}{
+                --al-extend-t: #{$value}px !important;
+                --al-extend-b: #{$value}px !important;
+            }
+            &-x-#{$key}{
+                --al-extend-e: #{$value}px !important;
+                --al-extend-s: #{$value}px !important;
+            }
+        }
+        &-extend-t-#{$key}{
+            --al-extend-t: #{$value}px !important;
+        }
+        &-extend-b-#{$key}{
+            --al-extend-b: #{$value}px !important;
+        }
+
+        &-t-#{$key}{
+            --al-t: #{$value}px !important;
+        }
+        &-b-#{$key}{
+            --al-b: #{$value}px !important;
+        }
+    }
+
+    // Bee center %
+    $clip-center-sizes: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 90: 90%, 100: 100%);
+    @each $key, $value in $clip-center-sizes {
+        &-center{
+            &-all-#{$key}{
+                --al-center-t: #{$value} !important;
+                --al-center-e: #{$value} !important;
+                --al-center-b: #{$value} !important;
+                --al-center-s: #{$value} !important;
+            }
+            &-t-#{$key}{
+                --al-center-t: #{$value} !important;
+            }
+            &-b-#{$key}{
+                --al-center-b: #{$value} !important;
+            }
+        }
+    }
+
+    // Clip border & inlay size ===*/
+    $clip-border-sizes: ( 1:1, 2:2, 3:3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 16: 16, 24: 24, 32: 32);
+    @each $key, $value in $clip-border-sizes {
+        //Border
+        &-border-#{$key}{
+            --al-border:#{$value}px !important;
+        }
+
+        //Inlay
+        &-inlay-all-#{$key}{
+            --al-inlay: #{$value}px !important;
+        }
+        
+    }
+
+    // Clip border & inlay color*/
+    &-border{
+        &-primary{
+            --al-border-bg:var(--bs-primary) !important;
+        }
+        &-secondary{
+            --al-border-bg:var(--bs-secondary) !important;
+        }
+        &-success{
+            --al-border-bg:var(--bs-success) !important; 
+        }
+        &-danger{
+            --al-border-bg:var(--bs-danger) !important; 
+        }
+        &-warning{
+            --al-border-bg:var(--bs-warning) !important; 
+        }
+        &-info{
+            --al-border-bg:var(--bs-info) !important; 
+        }
+        &-white{
+            --al-border-bg:var(--bs-white) !important;  
+        }
+        &-black{
+            --al-border-bg:var(--bs-black) !important; 
+        }
+        &-transparent{
+            --al-border-bg:var(--bs-black) !important; 
+        }
+    }
+    
+    &-inlay-bg{
+        &-primary{
+            --al-inlay-bg:var(--bs-primary) !important;
+        }
+        &-secondary{
+            --al-inlay-bg:var(--bs-secondary) !important;
+        }
+        &-success{
+            --al-inlay-bg:var(--bs-success) !important; 
+        }
+        &-danger{
+            --al-inlay-bg:var(--bs-danger) !important; 
+        }
+        &-warning{
+            --al-inlay-bg:var(--bs-warning) !important; 
+        }
+        &-info{
+            --al-inlay-bg:var(--bs-info) !important; 
+        }
+        &-white{
+            --al-inlay-bg:var(--bs-white) !important;  
+        }
+        &-black{
+            --al-inlay-bg:var(--bs-black) !important; 
+        }
+        &-transparent{
+            --al-inlay-bg:var(--bs-black) !important; 
+        }
+    }
+
+    $clip-border-color-opacity: ( 5: 0.05, 10: 0.10, 25: 0.25, 50: 0.50, 75: 0.75);
+    @each $key, $value in $clip-border-color-opacity {
+        //Border color
+        &-border{
+            &-primary{
+                &-#{$key}{
+                    --al-border-bg:#{rgba($color: var(--bs-primary-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-secondary{
+                &-#{$key}{
+                    --al-border-bg:#{rgba($color: var(--bs-secondary-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-success{
+                &-#{$key}{
+                    --al-border-bg:#{rgba($color: var(--bs-success-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-warning{
+                &-#{$key}{
+                    --al-border-bg:#{rgba($color: var(--bs-warning-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-danger{
+                &-#{$key}{
+                    --al-border-bg:#{rgba($color: var(--bs-danger-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-info{
+                &-#{$key}{
+                    --al-border-bg:#{rgba($color: var(--bs-info-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-white{
+                &-#{$key}{
+                    --al-border-bg:#{rgba($color: var(--bs-white-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-black{
+                &-#{$key}{
+                    --al-border-bg:#{rgba($color: var(--bs-black-rgb), $alpha: $value)} !important;
+                }  
+            }
+        }
+
+        //Inlay color
+        &-inlay-bg{
+            &-primary{
+                &-#{$key}{
+                    --al-inlay-bg:#{rgba($color: var(--bs-primary-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-secondary{
+                &-#{$key}{
+                    --al-inlay-bg:#{rgba($color: var(--bs-secondary-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-success{
+                &-#{$key}{
+                    --al-inlay-bg:#{rgba($color: var(--bs-success-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-warning{
+                &-#{$key}{
+                    --al-inlay-bg:#{rgba($color: var(--bs-warning-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-danger{
+                &-#{$key}{
+                    --al-inlay-bg:#{rgba($color: var(--bs-danger-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-info{
+                &-#{$key}{
+                    --al-inlay-bg:#{rgba($color: var(--bs-info-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-white{
+                &-#{$key}{
+                    --al-inlay-bg:#{rgba($color: var(--bs-white-rgb), $alpha: $value)} !important;
+                }  
+            }
+            &-black{
+                &-#{$key}{
+                    --al-inlay-bg:#{rgba($color: var(--bs-black-rgb), $alpha: $value)} !important;
+                }  
+            }
+        }
+        
+    }
+
+
+
+
+}
+
+
+
+/* ===== clip Rtl & Ltr ===== */
+html{
+    &[dir=ltr]{
+        .al{ 
+            &-e-clip-y{
+                --al-extend-e:50px !important;
+                --al-e:16px !important;
+            }
+            &-s-clip-y{
+                --al-extend-s:50px !important;
+                --al-s:16px !important;
+            }
+            &-ts{
+                --al-ts:16px !important;
+            }
+            &-te{
+                --al-te:16px !important;
+            }
+            &-be{
+                --al-be:16px !important;
+            }
+            &-bs{
+                --al-bs:16px !important;
+            }
+
+            // clip size
+            $clip-sizes: (0:0, 1:1, 2:2, 3:3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 16: 16, 20: 20, 24: 24, 25: 25, 26: 26,  28: 28,  30: 30, 32: 32, 34: 34, 36: 36, 48: 48, 50: 50, 64: 64, 75: 75, 80: 80, 96: 96, 112: 112 );
+            @each $key, $value in $clip-sizes {
+                &-ts-#{$key}{
+                    --al-ts: #{$value}px !important;
+                }
+                &-te-#{$key}{
+                    --al-te: #{$value}px !important;
+                }
+                &-bs-#{$key}{
+                    --al-bs: #{$value}px !important;
+                }
+                &-be-#{$key}{
+                    --al-be: #{$value}px !important;
+                }
+            }
+
+            // Bee extend PX
+            $clip-extend-sizes: (0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 15: 15, 20: 20, 25: 25, 30: 30, 35: 35, 40: 40, 45: 45, 50: 50, 55: 55, 60: 60, 65: 65, 70: 70, 75: 75, 80: 80, 85: 85, 90: 90, 95: 95, 100: 100, 120: 120, 150: 150, 200: 200, 250: 250);
+            @each $key, $value in $clip-extend-sizes {
+                &-extend-s-#{$key}{
+                    --al-extend-s: #{$value}px !important;
+                }
+                &-extend-e-#{$key}{
+                    --al-extend-e: #{$value}px !important;
+                }
+                &-s-#{$key}{
+                    --al-s: #{$value}px !important;
+                }
+                &-e-#{$key}{
+                    --al-e: #{$value}px !important;
+                }
+            }
+            
+            // Bee center %
+            $clip-center-sizes: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 90: 90%, 100: 100%);
+            @each $key, $value in $clip-center-sizes {
+                &-center{
+                    &-s-#{$key}{
+                        --al-center-s: #{$value} !important;
+                    }
+                    &-e-#{$key}{
+                        --al-center-e: #{$value} !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &[dir=rtl]{
+        .al{ 
+            &-e-clip-y{
+                --al-extend-s:50px !important;
+                --al-s:16px !important;
+            }
+            &-s-clip-y{
+                --al-extend-e:50px !important;
+                --al-e:16px !important;
+            }
+            &-ts{
+                --al-te:16px !important;
+            }
+            &-te{
+                --al-ts:16px !important;
+            }
+            &-be{
+                --al-bs:16px !important;
+            }
+            &-bs{
+                --al-be:16px !important;
+            }
+
+            // clip size
+            $clip-sizes: (0:0, 1:1, 2:2, 3:3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 16: 16, 20: 20, 24: 24, 25: 25, 26: 26,  28: 28,  30: 30, 32: 32, 34: 34, 48: 48, 50: 50, 64: 64, 75: 75, 80: 80, 96: 96, 112: 112 );
+            @each $key, $value in $clip-sizes {
+                &-ts-#{$key}{
+                    --al-te: #{$value}px !important;
+                }
+                &-te-#{$key}{
+                    --al-ts: #{$value}px !important;
+                }
+                &-bs-#{$key}{
+                    --al-be: #{$value}px !important;
+                }
+                &-be-#{$key}{
+                    --al-bs: #{$value}px !important;
+                }
+            }
+
+            // Bee extend PX
+            $clip-extend-sizes: (0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 15: 15, 20: 20, 25: 25, 30: 30, 35: 35, 40: 40, 45: 45, 50: 50, 55: 55, 60: 60, 65: 65, 70: 70, 75: 75, 80: 80, 85: 85, 90: 90, 95: 95, 100: 100, 120: 120, 150: 150, 200: 200, 250: 250);
+            @each $key, $value in $clip-extend-sizes {
+                &-extend-s-#{$key}{
+                    --al-extend-e: #{$value}px !important;
+                }
+                &-extend-e-#{$key}{
+                    --al-extend-s: #{$value}px !important;
+                }
+                &-s-#{$key}{
+                    --al-e: #{$value}px !important;
+                }
+                &-e-#{$key}{
+                    --al-s: #{$value}px !important;
+                }
+            }
+            
+            // Bee center %
+            $clip-center-sizes: (0: 0%, 10: 10%, 25: 25%, 50: 50%, 75: 75%, 90: 90%, 100: 100%);
+            @each $key, $value in $clip-center-sizes {
+                &-center{
+                    &-s-#{$key}{
+                        --al-center-e: #{$value} !important;
+                    }
+                    &-e-#{$key}{
+                        --al-center-s: #{$value} !important;
+                    }
+                }
+            }
+        }
+    }
+}

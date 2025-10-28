@@ -1,0 +1,139 @@
+// @use'../varibles' as*;
+
+/*=== Import english fonts (Jura & roboto) from google ===*/
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*=== Import arabic fonts (Reem Kufi Fun & Cairo) from google ===*/
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Reem+Kufi+Fun:wght@400..700&display=swap');
+
+//Font family
+.al-ff{
+    &-roboto{
+        font-family: 'Roboto', sans-serif !important;
+    }
+    &-jura{
+        font-family: 'Jura', serif !important;
+    }
+    &-Reem-kufi-fun{
+        font-family: "Reem Kufi Fun", sans-serif !important;
+    }
+    &-cairo{
+        font-family: "Cairo", sans-serif !important;
+    }
+}
+
+//Variable
+$sizes: (
+  9: 0.563, 
+  10: 0.625, 
+  11: 0.688,
+  12: 0.75, 
+  13: 0.813, 
+  14: 0.875, 
+  15: 0.938, 
+  16: 1, 
+  17: 1.063, 
+  18: 1.125, 
+);
+
+.al{
+  // Font size
+  @each $key, $value in $sizes {
+    &-fs-#{$key} {
+      font-size: $value+rem !important;
+    }
+  }
+  
+  // &-fs{
+  //   &-1{
+  //     font-size: 3.5rem !important;
+  //   }
+  //   &-2{
+  //     font-size: 3rem !important;
+  //   }
+  //   &-3{
+  //     font-size: 2.5rem !important;
+  //   }
+  //   &-4{
+  //     font-size: 2rem !important;
+  //   }
+  //   &-5{
+  //     font-size: 1.5rem !important;
+  //   }
+  //   &-6{
+  //     font-size: 1rem !important;
+  //   }
+  // }
+
+  
+  // text writing mode (vertical)
+  &-text{
+    &-vertical{
+        &-rl{
+            writing-mode: vertical-rl;
+        }
+    }
+    &-sideways{
+        &-lr{
+            writing-mode: sideways-lr;
+        }
+    }
+    &-orientation{
+        &-upright{
+            text-orientation: upright;
+        }
+    }
+    &-overflow{
+      &-hidden{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &-vertical{
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          
+          // varible
+          $line-clamp: (2: 2, 3: 3, 4: 4, 5: 5,);
+          @each $key, $value in $line-clamp {
+            &-#{$key} {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: $value;
+            }
+          }
+        }
+      }
+    }
+
+.text-overflow-hidden {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+    
+    &-primary-both{
+        color:var(--primary-dark) !important;
+    }
+    &-white-both{
+        color: #fff !important;
+    }
+    &-black-both{
+        color: #000 !important;
+    }
+  }
+}
+
+html[lang="ar"]{
+  body{
+    font-family: "Cairo", sans-serif !important;
+    font-size: 0.938rem;
+    line-height: 1.6;
+  }
+}
+

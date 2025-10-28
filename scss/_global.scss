@@ -1,0 +1,16 @@
+// scrollbar
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  &-track {
+    background: var(--bs-gray-400);
+    border-radius: 10px;
+  }
+  &-thumb {
+    background: var(--bs-primary);
+    border-radius: 10px;
+    &:hover {
+      background: var(--bs-warning);
+    }
+  }
+}

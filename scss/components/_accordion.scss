@@ -1,0 +1,51 @@
+/* ===== RTL & LTR ===== */
+html{
+    &[dir=ltr]{
+      .al{
+        &-accordion{
+          &-button{
+            &-start{
+              position: relative;
+              &::after{
+                position: absolute;
+                top: 0px;
+                left: -5px;
+              }
+            }
+            &-end{
+              position: relative;
+              &::after{
+                position: absolute;
+                top: 10px;
+                right: -3px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &[dir=rtl]{
+      .al{
+        &-accordion{
+          &-button{
+            &-start{
+              position: relative;
+              &::after{
+                  position: absolute;
+                  top: 0px;
+                  right: -5px;
+              }
+            }
+            &-end{
+              position: relative;
+              &::after{
+                  position: absolute;
+                  top: 10px;
+                  left: -3px;
+              }
+            }
+          }
+        }
+      }
+    }
+}

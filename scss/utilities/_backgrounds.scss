@@ -1,0 +1,140 @@
+// @use'../varibles' as*;
+
+.al{
+    //background
+    &-bg{
+        &-primary-both{
+            background-color:var(--primary-dark) !important;
+        }
+        &-white-both{
+            background-color: #fff !important;
+        }
+        &-black-both{
+            background-color: #000 !important;
+        }
+
+        //gradient background
+        &-linear{
+            &-white{
+                background-image: linear-gradient(to right bottom, rgba($color: var(--bs-white-rgb), $alpha: 0.7), rgba($color: var(--bs-white-rgb), $alpha: 0.3));
+            }
+            &-primary{
+                background-image: linear-gradient(to right top, var(--bs-secondary), var(--bs-primary));
+            }
+        }
+        &-radial{
+            &-white{
+                background-image: radial-gradient(rgba($color: var(--bs-white-rgb), $alpha: 0.7), rgba($color: var(--bs-white-rgb), $alpha: 0.3));
+            }
+            &-primary{
+                background-image: radial-gradient(var(--bs-secondary), var(--bs-primary));
+            }
+        }
+        &-conic{
+            &-white{
+                background-image: conic-gradient(rgba($color: var(--bs-white-rgb), $alpha: 0.7), rgba($color: var(--bs-white-rgb), $alpha: 0.3));
+            }
+            &-primary{
+                background-image: conic-gradient(var(--bs-secondary), var(--bs-primary));
+            }
+        }
+
+
+        // background attachment
+        &-attachment{
+            &-fixed{
+                background-attachment: fixed !important;
+            }
+            &-local{
+                background-attachment: local !important;
+            }
+            &-scroll{
+                background-attachment: scroll !important;
+            }
+        }
+
+        // background origin
+        &-origin{
+            &-border{
+                background-origin: border-box !important;
+            }
+            &-padding{
+                background-origin: padding-box !important;
+            }
+            &-content{
+                background-origin: content-box !important;
+            }
+        }
+
+        // background position
+        &-position{
+            &-right{
+                background-position: right !important;
+                &-top{
+                    background-position: right top !important;
+                }
+                &-bottom{
+                    background-position: right bottom !important;
+                }
+            }
+            &-left{
+                background-position: left !important;
+                &-top{
+                    background-position: left top !important;
+                }
+                &-bottom{
+                    background-position: left bottom !important;
+                }
+            }
+            &-top{
+                background-position: top !important;
+            }
+            &-bottom{
+                background-position: bottom !important;
+            }
+            &-center{
+                background-position: center;
+                &-top{
+                    background-position: center top !important;
+                }
+                &-bottom{
+                    background-position: center bottom !important;
+                }
+                &-right{
+                    background-position: center right !important;
+                }
+                &-left{
+                    background-position: center left !important;
+                }
+            }
+        }
+        
+        // background repeat
+        &-repeat{
+            background-repeat: repeat !important;
+            &-no{
+                background-repeat: no-repeat !important;
+            }
+            &-x{
+                background-repeat: repeat-x !important;
+            }
+            &-y{
+                background-repeat: repeat-y !important;
+            }
+        }
+
+        // background size
+        &-size{
+            &-contain{
+                background-size: contain !important;
+            }
+            &-cover{
+                background-size: cover !important;
+            }
+            &-auto{
+                background-size: auto !important;
+            }
+        }
+    }
+}
+

@@ -1,65 +1,69 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
+# =====================================================
+#  AL-UIX NPM IGNORE FILE
+#  Inspired by Bootstrap’s structure
+# =====================================================
 
-*~
-*.sw[mnpcod]
-.tmp
-*.tmp
-*.tmp.*
-UserInterfaceState.xcuserstate
-$RECYCLE.BIN/
-
-*.log
-log.txt
-
-
-/.sourcemaps
-/.versions
-/coverage
-
-
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
+# Node / Environment
+node_modules/
 npm-debug.log
 yarn-error.log
+package-lock.json
 
-# IDEs and editors
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Source maps
+*.map
+
+# Build cache / temp
+.sass-cache/
+.cache/
+.tmp/
+.temp/
+
+# IDE / Editor
+.vscode/
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
 *.sublime-project
 *.sublime-workspace
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# Test / Dev files
+test/
+tests/
+examples/
+demo/
+playground/
+sandbox/
 
+# Git / CI / Metadata
+.git/
+.gitattributes
+.gitignore
+.github/
+.circleci/
+.travis.yml
+appveyor.yml
 
-# Miscellaneous
-/.angular
-/.angular/cache
-.sass-cache/
-/.nx
-/.nx/cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+# Documentation drafts or design notes
+docs/
+*.md.bak
+*.todo
 
-# System files
-.DS_Store
-Thumbs.db
+# Backup / Swap files
+*.log
+*.bak
+*.orig
+*.rej
+*.swp
+*.tmp.scss
+*.backup.scss
+
+# =====================================================
+#  Keep only production-ready assets
+# =====================================================
+!dist/
+!scss/
+!js/
+!LICENSE
+!README.md

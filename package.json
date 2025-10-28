@@ -1,0 +1,87 @@
+{
+  "name": "aluix",
+  "version": "1.0.0",
+  "description": "ALUIX — A futuristic, modular SCSS + JS UI framework that extends Bootstrap with advanced utilities, animations, and clipping effects for next-generation web design.",
+  "keywords": [
+    "aluix",
+    "aluix",
+    "bootstrap",
+    "bootstrap-extended",
+    "ui-framework",
+    "frontend-framework",
+    "scss",
+    "sass",
+    "css",
+    "javascript",
+    "utilities",
+    "animations",
+    "clip-path",
+    "design-system",
+    "modern-ui",
+    "responsive-design",
+    "web-components",
+    "motion-ui",
+    "visual-effects",
+    "futuristic-ui",
+    "custom-utilities"
+  ],
+  "homepage": "https://github.com/yourusername/ALUIX#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/ALUIX/issues"
+  },
+  "license": "MIT",
+  "author": "Alif Design Studio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/ALUIX.git"
+  },
+
+  "main": "dist/js/aluix.js",
+  "style": "dist/aluix.css",
+  "sass": "scss/aluix.scss",
+
+  "exports": {
+    ".": {
+      "sass": "./scss/aluix.scss",
+      "style": "./dist/aluix.css",
+      "require": "./dist/js/aluix.js",
+      "default": "./dist/js/aluix.js"
+    },
+    "./scss/*": "./scss/*",
+    "./dist/*": "./dist/*",
+    "./js/*": "./js/*"
+  },
+
+  "files": [
+    "dist/",
+    "scss/",
+    "js/",
+    "LICENSE",
+    "README.md"
+  ],
+
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "sass --watch scss:dist",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass scss:dist --style=compressed",
+    "build:js": "npm run js:minify",
+    "js:minify": "npx terser js/aluix.js -o dist/js/aluix.min.js && npx terser js/aluix-animation.js -o dist/js/aluix-animation.min.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+
+  "peerDependencies": {
+    "bootstrap": ">=5.3.0"
+  },
+
+  "optionalDependencies": {
+    "particles.js": "^2.0.0",
+    "fslightbox": "^3.4.1",
+    "slick-carousel": "^1.8.1"
+  },
+
+  "devDependencies": {
+    "sass": "^1.80.0",
+    "terser": "^5.36.0"
+  }
+}

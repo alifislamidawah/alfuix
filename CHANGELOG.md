@@ -21,7 +21,7 @@ This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PAT
   - `/scss` — source files (core, components, utilities, effects)
   - `/js` — animation and motion scripts
   - `/dist` — compiled, minified builds
-- Licensed under **MIT** — by [The Alif Lab & alfuix Authors](https://github.com/yourusername/alfuix).
+- Licensed under **MIT** — by [The Alif Lab & alfuix Authors](https://github.com/alifislamidawah/alfuix).
 
 ---
 

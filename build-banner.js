@@ -17,7 +17,7 @@ const banner =
   `/*!\n` +
   ` * alfuix (${homepage})\n` +
   ` * Copyright ${year} - The ${pkg.author || "Alif Lab & alfuix"} Authors\n` +
-  ` * Licensed under ${pkg.license} (${licenseLink})\n` +
+  ` * Licensed under ${pkg.license} https://github.com/alifislamidawah/alfuix/blob/main/LICENSE\n` +
   ` */\n`;
 
 // Target directories

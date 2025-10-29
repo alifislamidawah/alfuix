@@ -1,7 +1,7 @@
 /*!
- * aLuix (https://github.com/yourusername/AL-UIX/)
- * Copyright 2025 - The Alif Design Studio & aLuix Authors
- * Licensed under MIT (https://github.com/yourusername/AL-UIX/blob/main/LICENSE)
+ * alfuix (https://alfuix.com/)
+ * Copyright 2025 - The The Alif Lab & alfuix (https://github.com/alifislamidawah/alfuix/graphs/contributors) Authors
+ * Licensed under MIT https://github.com/alifislamidawah/alfuix/blob/main/LICENSE
  */
 /*=== Import english fonts (Jura & roboto) from google ===*/
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
@@ -8446,6 +8446,9 @@ html[dir=rtl] .al-center-e-100 {
 /*====== Varibles start =====*/
 .al {
   /*=== position top +ve utilities ===*/
+  /*=== position bottom +ve utilities ===*/
+  /*=== position top -ve utilities ===*/
+  /*=== position bottom -ve utilities ===*/
 }
 .al-top-0 {
   top: 0px !important;
@@ -8507,9 +8510,6 @@ html[dir=rtl] .al-center-e-100 {
 .al-top-64 {
   top: 64px !important;
 }
-.al {
-  /*=== position bottom +ve utilities ===*/
-}
 .al-bottom-0 {
   bottom: 0px !important;
 }
@@ -8570,9 +8570,6 @@ html[dir=rtl] .al-center-e-100 {
 .al-bottom-64 {
   bottom: 64px !important;
 }
-.al {
-  /*=== position top -ve utilities ===*/
-}
 .al-top-n-0 {
   top: 0px !important;
 }
@@ -8632,9 +8629,6 @@ html[dir=rtl] .al-center-e-100 {
 }
 .al-top-n-64 {
   top: -64px !important;
-}
-.al {
-  /*=== position bottom -ve utilities ===*/
 }
 .al-bottom-n-0 {
   bottom: 0px !important;
@@ -8713,6 +8707,9 @@ html[dir=rtl] .al-center-e-100 {
 /* ===== position (left & right) RTL & LTR ===== */
 html[dir=ltr] .al {
   /*=== position start +ve utilities ===*/
+  /*=== position end +ve utilities ===*/
+  /*=== position start -ve utilities ===*/
+  /*=== position end -ve utilities ===*/
 }
 html[dir=ltr] .al-start-0 {
   left: 0px !important;
@@ -8774,9 +8771,6 @@ html[dir=ltr] .al-start-48 {
 html[dir=ltr] .al-start-64 {
   left: 64px !important;
 }
-html[dir=ltr] .al {
-  /*=== position end +ve utilities ===*/
-}
 html[dir=ltr] .al-end-0 {
   right: 0px !important;
 }
@@ -8837,9 +8831,6 @@ html[dir=ltr] .al-end-48 {
 html[dir=ltr] .al-end-64 {
   right: 64px !important;
 }
-html[dir=ltr] .al {
-  /*=== position start -ve utilities ===*/
-}
 html[dir=ltr] .al-start-n-0 {
   left: 0px !important;
 }
@@ -8899,9 +8890,6 @@ html[dir=ltr] .al-start-n-48 {
 }
 html[dir=ltr] .al-start-n-64 {
   left: -64px !important;
-}
-html[dir=ltr] .al {
-  /*=== position end -ve utilities ===*/
 }
 html[dir=ltr] .al-end-n-0 {
   right: 0px !important;
@@ -8965,6 +8953,9 @@ html[dir=ltr] .al-end-n-64 {
 }
 html[dir=rtl] .al {
   /*=== position start +ve utilities ===*/
+  /*=== position end +ve utilities ===*/
+  /*=== position start -ve utilities ===*/
+  /*=== position end -ve utilities ===*/
 }
 html[dir=rtl] .al-start-0 {
   right: 0px !important;
@@ -9026,9 +9017,6 @@ html[dir=rtl] .al-start-48 {
 html[dir=rtl] .al-start-64 {
   right: 64px !important;
 }
-html[dir=rtl] .al {
-  /*=== position end +ve utilities ===*/
-}
 html[dir=rtl] .al-end-0 {
   left: 0px !important;
 }
@@ -9088,9 +9076,6 @@ html[dir=rtl] .al-end-48 {
 }
 html[dir=rtl] .al-end-64 {
   left: 64px !important;
-}
-html[dir=rtl] .al {
-  /*=== position start -ve utilities ===*/
 }
 html[dir=rtl] .al-start-n-0 {
   right: 0px !important;
@@ -9171,9 +9156,6 @@ html[dir=rtl] .al-start-n-48 {
 html[dir=rtl] .al-start-n-64 {
   right: -64px !important;
   left: inherit !important;
-}
-html[dir=rtl] .al {
-  /*=== position end -ve utilities ===*/
 }
 html[dir=rtl] .al-end-n-0 {
   left: 0px !important;
@@ -15740,4 +15722,4 @@ html[lang=ar] body {
   line-height: 1.6;
 }
 
-/*# sourceMappingURL=aluix-utilities.css.map */
+/*# sourceMappingURL=alfuix-utilities.css.map */

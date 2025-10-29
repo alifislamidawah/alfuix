@@ -7,7 +7,7 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-package-lock.json
+build-banner.json
 
 # OS Files
 .DS_Store

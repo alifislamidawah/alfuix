@@ -21,7 +21,7 @@
 ## 📦 Installation
 
 ```bash
-npm install bootstrap alfuix
+npm install alfuix
 
 # OR via yarn
-yarn add bootstrap alfuix
+yarn add alfuix

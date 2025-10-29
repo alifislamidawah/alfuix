@@ -15,8 +15,8 @@ const licenseLink = `${homepage.replace(/\/$/, "")}/blob/main/LICENSE`;
 // Build banner (Bootstrap-style)
 const banner =
   `/*!\n` +
-  ` * aLuix (${homepage})\n` +
-  ` * Copyright ${year} - The ${pkg.author || "Alif Design Studio & aLuix"} Authors\n` +
+  ` * alfuix (${homepage})\n` +
+  ` * Copyright ${year} - The ${pkg.author || "Alif Lab & alfuix"} Authors\n` +
   ` * Licensed under ${pkg.license} (${licenseLink})\n` +
   ` */\n`;
 

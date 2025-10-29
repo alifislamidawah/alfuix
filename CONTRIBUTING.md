@@ -1,13 +1,13 @@
-# 🤝 Contributing to aLuix
+# 🤝 Contributing to alfuix
 
 First off — thank you for taking the time to contribute! 💙  
-Your help is what makes **aLuix** a better and more futuristic framework for everyone.
+Your help is what makes **alfuix** a better and more futuristic framework for everyone.
 
 ---
 
 ## 🧩 Overview
 
-**aLuix** is a futuristic, modular **SCSS + JS UI framework** that extends **popular systems like Bootstrap and Tailwind** with advanced utilities, motion effects, and clipping-based design.
+**alfuix** is a futuristic, modular **SCSS + JS UI framework** that extends **popular systems like Bootstrap and Tailwind** with advanced utilities, motion effects, and clipping-based design.
 
 The framework follows:
 
@@ -21,8 +21,8 @@ The framework follows:
 
 ### 1️⃣ Fork & Clone
 ```bash
-git clone https://github.com/yourusername/aluix.git
-cd aluix
+git clone https://github.com/yourusername/alfuix.git
+cd alfuix
 npm install
 
 ### 2️⃣ Run Dev Build

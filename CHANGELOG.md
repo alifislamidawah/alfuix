@@ -1,6 +1,6 @@
 # 🧾 Changelog
 
-All notable changes to **aLuix** will be documented in this file.  
+All notable changes to **alfuix** will be documented in this file.  
 This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH).
 
 ---
@@ -9,19 +9,19 @@ This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PAT
 
 ### 🎉 Initial Release
 
-- Introduced **aLuix**, a futuristic, modular **SCSS + JS UI framework** that extends **Bootstrap and Tailwind**.  
+- Introduced **alfuix**, a futuristic, modular **SCSS + JS UI framework** that extends **Bootstrap and Tailwind**.  
 - Core features:
   - **Framework-agnostic architecture** — designed to work seamlessly with **Bootstrap 5.3+** and **Tailwind CSS**.
   - **Advanced SCSS utilities** — including sizing, clip, transform, filters, and typography helpers.
   - **Futuristic animations** — motion, scroll, reveal, and transform effects.
-  - **Standalone builds** — `aluix-clip`, `aluix-animation`, and `aluix-utilities` modules.
+  - **Standalone builds** — `alfuix-clip`, `alfuix-animation`, and `alfuix-utilities` modules.
   - **JavaScript extensions** — for interactive motion and visual layering.
   - **Plugin-ready design** — supports third-party integrations like `particles.js`, `fslightbox`, and `slick-carousel`.
 - Production-ready structure:
   - `/scss` — source files (core, components, utilities, effects)
   - `/js` — animation and motion scripts
   - `/dist` — compiled, minified builds
-- Licensed under **MIT** — by [The Alif Design Studio & aLuix Authors](https://github.com/yourusername/aluix).
+- Licensed under **MIT** — by [The Alif Lab & alfuix Authors](https://github.com/yourusername/alfuix).
 
 ---
 

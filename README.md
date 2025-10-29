@@ -1,11 +1,11 @@
-# 🌌 aLuix — Extending popular frameworks like Bootstrap & Tailwind for the Future
+# 🌌 alfuix — Extending popular frameworks like Bootstrap & Tailwind for the Future
 
-> **aLuix** is a futuristic, modular **SCSS + JS UI framework** that extends popular systems like **Bootstrap** and **Tailwind** with advanced utilities, motion layers, and clipping effects for next-generation web design.  
+> **alfuix** is a futuristic, modular **SCSS + JS UI framework** that extends popular systems like **Bootstrap** and **Tailwind** with advanced utilities, motion layers, and clipping effects for next-generation web design.  
 > Built for developers and designers who want the reliability of Bootstrap and the flexibility of Tailwind — supercharged with **motion, depth, and futuristic design power.**
 
 ---
 
-## 🚀 Why aLuix?
+## 🚀 Why alfuix?
 
 | Feature | Description |
 |----------|-------------|
@@ -21,9 +21,7 @@
 ## 📦 Installation
 
 ```bash
-npm install bootstrap aluix
-npm install tailwindcss aluix
+npm install bootstrap alfuix
 
 # OR via yarn
-yarn add bootstrap aluix
-yarn add tailwindcss aluix
+yarn add bootstrap alfuix

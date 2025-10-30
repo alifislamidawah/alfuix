@@ -1,6 +1,6 @@
 {
   "name": "alfuix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "alfuix — A futuristic, modular SCSS + JS UI framework that extends popular frameworks like Bootstrap and Tailwind with advanced utilities, motion effects, and clipping-based design for next-generation web experiences.",
   "keywords": [
     "alfuix",

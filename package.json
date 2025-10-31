@@ -42,6 +42,10 @@
   "main": "dist/js/alfuix.js",
   "style": "dist/css/alfuix.css",
   "sass": "scss/alfuix.scss",
+  "cdn": {
+    "jsdelivr": "dist/js/alfuix.min.js",
+    "unpkg": "dist/js/alfuix.min.js"
+  },
   "exports": {
     ".": {
       "sass": "./scss/alfuix.scss",

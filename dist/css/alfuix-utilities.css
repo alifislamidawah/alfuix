@@ -7,26 +7,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 /*=== Import arabic fonts (Reem Kufi Fun & Cairo) from google ===*/
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Reem+Kufi+Fun:wght@400..700&display=swap");
-:root {
-  --primary-dark: #120129;
-  --font-family-roboto: "Roboto", sans-serif;
-  --font-family-jura: "Jura", serif;
-  --font-reem-kufi-fun: "Reem Kufi Fun", sans-serif;
-  --font-cairo: "Cairo", sans-serif;
-}
-
-[data-bs-theme=dark] {
-  --bs-body-bg:#1d1e24;
-  --bs-light-rgb:33, 37, 41;
-  --bs-white-rgb:29, 30, 36;
-  --bs-body-color:#dee2e6;
-  --bs-box-shadow: 0px 0px 3px rgb(123 22 251);
-  --bs-box-shadow-sm: 0px 0px 2px rgb(123 22 251);
-  --bs-box-shadow-lg: 0px 0px 5px rgb(123 22 251);
-  --bs-black-rgb: 255, 255, 255;
-  --bs-dark-rgb: 255, 255, 255;
-}
-
 [data-bs-theme=alif-dark-blue] {
   --bs-body-color: #fff;
   --bs-primary: #109DF4;

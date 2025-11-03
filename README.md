@@ -1,27 +1,34 @@
-# 🌌 alfuix — Extending popular frameworks like Bootstrap & Tailwind for the Future
+# 🌌 alfuix — Extending Bootstrap & Tailwind for the Future
 
-> **alfuix** is a futuristic, modular **SCSS + JS UI framework** that extends popular systems like **Bootstrap** and **Tailwind** with advanced utilities, motion layers, and clipping effects for next-generation web design.  
-> Built for developers and designers who want the reliability of Bootstrap and the flexibility of Tailwind — supercharged with **motion, depth, and futuristic design power.**
+[![npm version](https://img.shields.io/npm/v/alfuix.svg?style=flat-square&color=blue)](https://www.npmjs.com/package/alfuix)
+[![npm downloads](https://img.shields.io/npm/dm/alfuix.svg?style=flat-square&color=brightgreen)](https://www.npmjs.com/package/alfuix)
+[![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/alfuix/badge?style=flat-square)](https://www.jsdelivr.com/package/npm/alfuix)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/alfuix?style=flat-square&color=orange)](https://bundlephobia.com/package/alfuix)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+[![Website](https://img.shields.io/badge/docs-alfuix.com-blueviolet?style=flat-square)](https://alfuix.com/doc/)
+
+> **Alfuix** is a futuristic, modular **SCSS + CSS enhancement framework** that extends **Bootstrap** and **TailwindCSS** by supercharging their **utilities** and **components**.  
+> It introduces **clipping effects**, **shape systems**, **filters**, and **motion-inspired styling** — built for designers who want the future of UI, today.
 
 ---
 
-## 🚀 Why alfuix?
+## 🚀 Why Alfuix?
 
 | Feature | Description |
 |----------|-------------|
-| ⚙️ **Extends Bootstrap & Tailwind** | Works seamlessly with **Bootstrap 5.3+** and **Tailwind CSS** — inherits grids, variables, and utilities. |
-| ✨ **Futuristic Utilities** | Adds advanced features like **clip-paths**, **filters**, **blend modes**, and **interactive layers**. |
-| 🎨 **Modular Architecture** | Import only what you need — full framework or standalone utilities. |
-| 💫 **High-Performance Animations** | Includes **scroll**, **reveal**, and **motion-based** effects for immersive UI. |
-| 🧩 **Plugin-Ready** | Compatible with popular JS libraries like `particles.js`, `fslightbox`, and `slick-carousel`. |
-| 🧠 **Designer Friendly** | SCSS-driven system with variables, mixins, and design tokens for easy customization. |
+| ⚙️ **Extends Bootstrap & Tailwind** | Enhances existing **utility** and **component** systems — keeps grids and layouts from your base framework. |
+| ✨ **Futuristic Utilities** | Adds **clip-paths**, **filters**, **blend modes**, **borders**, and **effects** beyond standard frameworks. |
+| 🎨 **Modular Architecture** | Use full build or import only specific modules like `alfuix-clip`, `alfuix-animation`, or `alfuix-utilities`. |
+| 💫 **Motion-Ready Design** | Provides lightweight CSS motion effects that pair well with animation libraries. |
+| 🧠 **Designer Friendly** | Built with SCSS variables, mixins, and design tokens for customization and scalability. |
 
 ---
 
 ## 📦 Installation
 
+Install via npm or yarn:
+
 ```bash
 npm install alfuix
-
-# OR via yarn
+# or
 yarn add alfuix

@@ -1,20 +1,18 @@
 {
   "name": "alfuix",
-  "version": "1.0.2",
-  "description": "alfuix — A futuristic, modular SCSS + JS UI framework that extends popular frameworks like Bootstrap and Tailwind with advanced utilities, motion effects, and clipping-based design for next-generation web experiences.",
+  "version": "1.0.3",
+  "description": "Alfuix — A futuristic SCSS + CSS framework that extends frameworks like Bootstrap and Tailwind by enhancing their utilities and components with advanced clipping, shapes, borders, filters, and motion effects for next-generation design.",
   "keywords": [
     "alfuix",
-    "al-uix",
     "bootstrap",
-    "bootstrap-extension",
     "tailwind",
+    "bootstrap-extension",
     "tailwind-extension",
     "ui-framework",
     "frontend-framework",
     "scss",
     "sass",
     "css",
-    "javascript",
     "utilities",
     "animations",
     "motion-ui",
@@ -22,12 +20,13 @@
     "design-system",
     "modern-ui",
     "responsive-design",
-    "web-components",
-    "visual-effects",
     "futuristic-ui",
     "custom-utilities",
     "advanced-ui",
-    "modern-framework"
+    "components",
+    "filters",
+    "shapes",
+    "borders"
   ],
   "homepage": "https://alfuix.com/",
   "author": "The Alif Lab & alfuix (https://github.com/alifislamidawah/alfuix/graphs/contributors)",
@@ -39,66 +38,68 @@
     "type": "git",
     "url": "git+https://github.com/alifislamidawah/alfuix.git"
   },
-  "main": "dist/js/alfuix.js",
+
   "style": "dist/css/alfuix.css",
   "sass": "scss/alfuix.scss",
+
   "cdn": {
-    "jsdelivr": "dist/js/alfuix.min.js",
-    "unpkg": "dist/js/alfuix.min.js"
+    "jsdelivr": "dist/css/alfuix.min.css",
+    "unpkg": "dist/css/alfuix.min.css"
   },
+
   "exports": {
     ".": {
       "sass": "./scss/alfuix.scss",
       "style": "./dist/css/alfuix.css",
-      "require": "./dist/js/alfuix.js",
-      "default": "./dist/js/alfuix.js"
+      "default": "./dist/css/alfuix.css"
     },
     "./scss/*": "./scss/*",
-    "./dist/*": "./dist/*",
-    "./js/*": "./js/*"
+    "./dist/*": "./dist/*"
   },
+
   "files": [
     "dist/",
     "scss/",
-    "js/",
     "LICENSE",
     "README.md"
   ],
+
   "scripts": {
     "start": "npm run dev",
     "dev": "npx sass --watch scss:dist/css",
 
     "build": "npm run clean && npm run build:all",
-    "build:all": "npx mkdirp dist/css dist/js && npm run css:build && npm run js:build && npm run add:banners",
+    "build:all": "npx mkdirp dist/css && npm run css:build && npm run add:banners",
 
     "css:build": "npm run css:normal && npm run css:minify",
     "css:normal": "npx sass scss/alfuix.scss dist/css/alfuix.css --style=expanded && npx sass scss/alfuix-clip.scss dist/css/alfuix-clip.css --style=expanded && npx sass scss/alfuix-animation.scss dist/css/alfuix-animation.css --style=expanded && npx sass scss/alfuix-utilities.scss dist/css/alfuix-utilities.css --style=expanded",
     "css:minify": "npx sass scss/alfuix.scss dist/css/alfuix.min.css --style=compressed && npx sass scss/alfuix-clip.scss dist/css/alfuix-clip.min.css --style=compressed && npx sass scss/alfuix-animation.scss dist/css/alfuix-animation.min.css --style=compressed && npx sass scss/alfuix-utilities.scss dist/css/alfuix-utilities.min.css --style=compressed",
 
-    "js:build": "npm run js:copy && npm run js:bundle && npm run js:minify",
-    "js:copy": "npx mkdirp dist/js && npx copyfiles -f js/alfuix.js js/alfuix-animation.js dist/js",
-    "js:bundle": "npx concat-cli -f js/alfuix.js js/alfuix-animation.js -o dist/js/alfuix.bundle.js",
-    "js:minify": "npx terser dist/js/alfuix.js -o dist/js/alfuix.min.js --compress --mangle --comments '/^!/' && npx terser dist/js/alfuix-animation.js -o dist/js/alfuix-animation.min.js --compress --mangle --comments '/^!/' && npx terser dist/js/alfuix.bundle.js -o dist/js/alfuix.bundle.min.js --compress --mangle --comments '/^!/'",
-
     "add:banners": "node build-banner.js",
 
     "clean": "npx rimraf dist",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+
+    "postinstall": "echo '✅ Alfuix installed successfully!\\n✨ Extend your utilities and components with futuristic effects — built to work alongside Bootstrap & Tailwind.'"
   },
+
   "peerDependencies": {
-    "bootstrap": ">=5.3.0"
+    "bootstrap": ">=5.3.0 || ^6.0.0",
+    "tailwindcss": ">=3.0.0"
   },
-  "optionalDependencies": {
-    "fslightbox": "^3.4.1",
-    "particles.js": "^2.0.0",
-    "slick-carousel": "^1.8.1"
+  "peerDependenciesMeta": {
+    "bootstrap": {
+      "optional": true
+    },
+    "tailwindcss": {
+      "optional": true
+    }
   },
+
   "devDependencies": {
-    "concat-cli": "^4.0.0",
     "copyfiles": "^2.4.1",
     "mkdirp": "^3.0.1",
     "rimraf": "^6.0.1",
-    "sass": "^1.93.2",
-    "terser": "^5.44.0"
+    "sass": "^1.93.2"
   }
 }

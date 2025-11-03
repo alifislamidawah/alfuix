@@ -5,18 +5,40 @@ This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PAT
 
 ---
 
+## [1.0.2] — 2025-11-03
+
+### 🧩 Refined Framework Scope
+- Converted **alfuix** to a **CSS-only** framework — removed all JavaScript dependencies.  
+- Focused on **enhancing utilities and components**, not grid or layout systems.  
+- Now works *alongside* frameworks like **Bootstrap** and **TailwindCSS**, extending their visual and utility layers.
+
+### ✨ Updated Features
+- Enhanced SCSS structure with modular files:  
+  - `alfuix-clip` — advanced shapes and clipping effects.  
+  - `alfuix-animation` — motion-based utility classes.  
+  - `alfuix-utilities` — extended filters, borders, and transforms.  
+- Improved build scripts for **Sass-only** compilation and banner injection.
+- Added friendly `postinstall` success message for npm installations.
+- Introduced `peerDependenciesMeta` to allow optional Bootstrap/Tailwind integration.
+
+### 🧾 Documentation & Metadata
+- Updated `README.md` to reflect **CSS-only** architecture.  
+- Revised `package.json` for simplified exports and dev dependencies.  
+- Added clear integration examples for **Bootstrap**, **Tailwind**, and **Standalone** use cases.
+
+---
+
 ## [1.0.0] — 2025-10-28
 
 ### 🎉 Initial Release
 
-- Introduced **alfuix**, a futuristic, modular **SCSS + JS UI framework** that extends **Bootstrap and Tailwind**.  
+- Introduced **alfuix**, a futuristic, modular **SCSS + JS UI framework** extending **Bootstrap** and **Tailwind**.
 - Core features:
-  - **Framework-agnostic architecture** — designed to work seamlessly with **Bootstrap 5.3+** and **Tailwind CSS**.
-  - **Advanced SCSS utilities** — including sizing, clip, transform, filters, and typography helpers.
-  - **Futuristic animations** — motion, scroll, reveal, and transform effects.
-  - **Standalone builds** — `alfuix-clip`, `alfuix-animation`, and `alfuix-utilities` modules.
-  - **JavaScript extensions** — for interactive motion and visual layering.
-  - **Plugin-ready design** — supports third-party integrations like `particles.js`, `fslightbox`, and `slick-carousel`.
+  - Framework-agnostic architecture compatible with **Bootstrap 5.3+** and **Tailwind CSS**.
+  - Advanced SCSS utilities for **clip-paths**, **filters**, **typography**, and **effects**.
+  - Futuristic animations: motion, scroll, reveal, and transform.
+  - Standalone builds: `alfuix-clip`, `alfuix-animation`, and `alfuix-utilities`.
+  - Plugin-ready JS layer for `particles.js`, `fslightbox`, and `slick-carousel`.
 - Production-ready structure:
   - `/scss` — source files (core, components, utilities, effects)
   - `/js` — animation and motion scripts
@@ -27,21 +49,21 @@ This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PAT
 
 ## [Unreleased]
 
-### ✨ Added
-- Planned new futuristic utilities: `_3d.scss`, `_neon.scss`, `_parallax.scss`.
-- `data-motion` attribute support for declarative animations.
+### ✨ Planned
+- New futuristic SCSS modules: `_3d.scss`, `_neon.scss`, `_parallax.scss`.
+- Expand **motion-utility library** with `data-motion` declarative syntax.
+- Introduce `alfuix-theme` system for extended color and tone mapping.
 
-### 🔧 Changed
-- Enhanced variable system for **advanced theming** and **dark mode**.
-- Optimized motion easing curves and reduced compiled CSS footprint.
+### 🔧 Improvements
+- Further optimize SCSS variable hierarchy for **dark mode** and **design tokens**.
+- Reduce final CSS footprint through conditional Sass imports.
 
-### 🐞 Fixed
-- Corrected SCSS variable reference inconsistencies.
-- Fixed z-index layering issue on modals and tooltips.
-- Adjusted clip-path utility naming for better readability.
+### 🐞 Fixes
+- Adjusted filter and clip utility names for consistency.
+- Improved SCSS build order to avoid dependency conflicts.
 
-### 🗑️ Removed
-- Deprecated experimental `_legacy.scss` utilities and old mixin references.
+### 🗑️ Deprecated
+- Removed all legacy JS animation utilities.
 
 ---
 
@@ -49,9 +71,9 @@ This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PAT
 
 | Type | Description | Example |
 |------|--------------|----------|
-| **MAJOR** | Breaking changes (structure, variables, or architecture) | 1.x.x → 2.0.0 |
-| **MINOR** | Backward-compatible feature or utility additions | 1.0.0 → 1.1.0 |
-| **PATCH** | Fixes or small enhancements | 1.0.0 → 1.0.1 |
+| **MAJOR** | Breaking changes (structure, architecture, or imports) | 1.x.x → 2.0.0 |
+| **MINOR** | Backward-compatible features or modules | 1.0.2 → 1.1.0 |
+| **PATCH** | Fixes, cleanup, or minor improvements | 1.0.2 → 1.0.3 |
 
 ---
 
@@ -59,4 +81,4 @@ This project follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PAT
 
 When submitting pull requests:
 1. Update the relevant section in this changelog under **[Unreleased]**.  
-2. Follow the **Conventional Commit** format:  
+2. Follow the **Conventional Commit** format for consistency:  

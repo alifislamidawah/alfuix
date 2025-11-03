@@ -1,19 +1,20 @@
 # 🤝 Contributing to alfuix
 
 First off — thank you for taking the time to contribute! 💙  
-Your help is what makes **alfuix** a better and more futuristic framework for everyone.
+Your support helps **Alfuix** grow into a more futuristic, design-forward CSS framework for everyone.
 
 ---
 
 ## 🧩 Overview
 
-**alfuix** is a futuristic, modular **SCSS + JS UI framework** that extends **popular systems like Bootstrap and Tailwind** with advanced utilities, motion effects, and clipping-based design.
+**Alfuix** is a modular **SCSS + CSS enhancement framework** that extends existing systems like **Bootstrap** and **TailwindCSS**.  
+It focuses on improving **utilities**, **components**, and **visual effects** — introducing futuristic styling features like **clip-paths**, **filters**, and **motion-ready design utilities**.
 
 The framework follows:
 
-- 🧱 **Bootstrap & Tailwind principles** — structured, scalable, and utility-driven.  
-- 🧮 **Semantic Versioning (SemVer)** — predictable and stable releases.  
-- 💬 **Open collaboration** — every contribution, big or small, is welcome!  
+- 🧱 **Bootstrap & Tailwind alignment** — built to complement existing grids and layouts.  
+- 🧮 **Semantic Versioning (SemVer)** — stable, predictable releases.  
+- 💬 **Open collaboration** — every suggestion, fix, or enhancement is welcome!  
 
 ---
 
@@ -24,9 +25,3 @@ The framework follows:
 git clone https://github.com/alifislamidawah/alfuix.git
 cd alfuix
 npm install
-
-### 2️⃣ Run Dev Build
-npm run dev
-
-### 3️⃣ Build Production Files
-npm run build
